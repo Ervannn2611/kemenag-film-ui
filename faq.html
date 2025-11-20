@@ -42,6 +42,30 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Style untuk icon di details/summary */
+    .faq-item summary::after {
+        content: 'expand_more'; /* Icon default: panah ke bawah */
+        font-family: 'Material Symbols Outlined';
+        font-variation-settings: 'wght' 400;
+        font-size: 24px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Putar icon saat details terbuka */
+    .faq-item[open] summary::after {
+        content: 'expand_less'; /* Icon saat terbuka: panah ke atas */
+    }
+
+    /* Sembunyikan marker default pada summary */
+    .faq-item summary {
+        list-style: none;
+    }
+
+    /* Untuk kompatibilitas Firefox */
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
   </style>
 </head>
 <body class="font-display bg-background-dark text-[#E0E0E0]">
@@ -171,62 +195,87 @@
 <div class="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-24 sm:py-32 text-center text-white">
 <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">FAQ</h1>
 <div class="mt-6 text-sm text-[#A0A0A0]">
-
 <span class="text-white">FAQ</span>
 </div>
 </div>
 </div>
 <div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
 <div class="prose prose-invert max-w-none prose-p:text-[#E0E0E0] prose-headings:text-white prose-strong:text-white prose-ul:list-disc prose-ol:list-decimal prose-a:text-primary hover:prose-a:text-primary/90">
-<p class="lead !text-lg !text-gray-300">Temukan jawaban untuk pertanyaan yang paling sering diajukan mengenai layanan, akun, dan konten di Kemenag Movies.</p>
+<section class="mt-12 space-y-4">
 
-<section class="mt-12 space-y-8">
+<h2 class="!mb-4 !text-3xl !font-bold">Pertanyaan</h2>
 
-<h2 class="!mb-4 !text-3xl !font-bold">Akun & Pendaftaran</h2>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">1.</span> Bagaimana cara mendaftar di Kemenag Movies?</span>
+        </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Anda dapat mendaftar dengan mengklik tombol "Daftar" di sudut kanan atas halaman. Masukkan alamat email dan kata sandi Anda, atau gunakan opsi pendaftaran cepat dengan akun Google/media sosial.</p>
+    </div>
+</details>
 
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">1.</span> Bagaimana cara mendaftar di Kemenag Movies?</h3>
-    <p>Anda dapat mendaftar dengan mengklik tombol "Daftar" di sudut kanan atas halaman. Masukkan alamat email dan kata sandi Anda, atau gunakan opsi pendaftaran cepat dengan akun Google/media sosial.</p>
-</div>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">2.</span> Apakah Kemenag Movies berbayar?</span>
+    </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Platform Kemenag Movies dapat menawarkan sebagian kontennya secara gratis (free-to-watch) dan sebagian lagi melalui model langganan berbayar (premium). Silakan periksa halaman Paket Langganan untuk detail lebih lanjut.</p>
+    </div>
+</details>
 
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">2.</span> Apakah Kemenag Movies berbayar?</h3>
-    <p>Platform Kemenag Movies dapat menawarkan sebagian kontennya secara gratis (free-to-watch) dan sebagian lagi melalui model langganan berbayar (premium). Silakan periksa halaman Paket Langganan untuk detail lebih lanjut.</p>
-</div>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">3.</span> Saya lupa kata sandi. Apa yang harus saya lakukan?</span>
+    </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Di halaman masuk, klik tautan "Lupa Kata Sandi". Masukkan alamat email yang terdaftar, dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda.</p>
+    </div>
+</details>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">4.</span> Format dan kualitas video apa yang tersedia?</span>
+    </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Sebagian besar film tersedia dalam kualitas HD (720p) hingga Full HD (1080p). Kualitas tontonan akan menyesuaikan secara otomatis dengan kecepatan koneksi internet Anda.</p>
+    </div>
+</details>
 
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">3.</span> Saya lupa kata sandi. Apa yang harus saya lakukan?</h3>
-    <p>Di halaman masuk, klik tautan "Lupa Kata Sandi". Masukkan alamat email yang terdaftar, dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda.</p>
-</div>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">5.</span> Mengapa film saya mengalami *buffering*?</span>
+    </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Buffering biasanya disebabkan oleh koneksi internet yang lambat atau tidak stabil. Coba hentikan aplikasi lain yang menggunakan bandwidth atau turunkan kualitas video secara manual di pengaturan pemutar.</p>
+    </div>
+</details>
 
-<h2 class="!mt-12 !mb-4 !text-3xl !font-bold">Tontonan & Kualitas Video</h2>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">6.</span> Apakah saya bisa mengunduh film untuk ditonton secara *offline*?</span>
+    </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Fitur unduhan *offline* saat ini hanya tersedia pada aplikasi mobile kami (iOS dan Android). Pastikan Anda memiliki paket langganan yang mendukung fitur ini.</p>
+    </div>
+</details>
 
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">4.</span> Format dan kualitas video apa yang tersedia?</h3>
-    <p>Sebagian besar film tersedia dalam kualitas HD (720p) hingga Full HD (1080p). Kualitas tontonan akan menyesuaikan secara otomatis dengan kecepatan koneksi internet Anda.</p>
-</div>
 
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">5.</span> Mengapa film saya mengalami *buffering*?</h3>
-    <p>Buffering biasanya disebabkan oleh koneksi internet yang lambat atau tidak stabil. Coba hentikan aplikasi lain yang menggunakan bandwidth atau turunkan kualitas video secara manual di pengaturan pemutar.</p>
-</div>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">7.</span> Apa fokus utama film di Kemenag Movies?</span>
+    </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Kami fokus menyajikan film-film yang relevan dengan nilai-nilai keagamaan, sejarah Islam, kebudayaan, dan inspirasi spiritual, sejalan dengan visi Kementerian Agama Republik Indonesia.</p>
+    </div>
+</details>
 
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">6.</span> Apakah saya bisa mengunduh film untuk ditonton secara *offline*?</h3>
-    <p>Fitur unduhan *offline* saat ini hanya tersedia pada aplikasi mobile kami (iOS dan Android). Pastikan Anda memiliki paket langganan yang mendukung fitur ini.</p>
-</div>
-
-<h2 class="!mt-12 !mb-4 !text-3xl !font-bold">Konten & Legalitas</h2>
-
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">7.</span> Apa fokus utama film di Kemenag Movies?</h3>
-    <p>Kami fokus menyajikan film-film yang relevan dengan nilai-nilai keagamaan, sejarah Islam, kebudayaan, dan inspirasi spiritual, sejalan dengan visi Kementerian Agama Republik Indonesia.</p>
-</div>
-
-<div class="space-y-4 border-b border-white/10 pb-4">
-    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">8.</span> Bagaimana jika saya menemukan konten yang melanggar hak cipta?</h3>
-    <p>Kami menghormati hak cipta. Jika Anda menemukan adanya dugaan pelanggaran, silakan segera ajukan pemberitahuan melalui laman <a href="dmca-notice.html">DMCA Notice</a> kami yang tersedia di bagian footer.</p>
-</div>
+<details class="faq-item group/faq border border-white/10 rounded-lg p-4 transition-all duration-300 hover:bg-white/5">
+    <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white transition-colors hover:text-primary">
+        <span><span class="text-primary mr-2">8.</span> Bagaimana jika saya menemukan konten yang melanggar hak cipta?</span>
+    </summary>
+    <div class="pt-4 text-base text-[#E0E0E0] border-t border-white/10 mt-4">
+        <p>Kami menghormati hak cipta. Jika Anda menemukan adanya dugaan pelanggaran, silakan segera ajukan pemberitahuan melalui laman <a href="dmca-notice.html" class="text-primary hover:text-primary/90 transition-colors">DMCA Notice</a> kami yang tersedia di bagian footer.</p>
+    </div>
+</details>
 
 </section>
 
