@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="id">
-<head>
+<html class="dark" lang="id"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Kemenag - Platform Film</title>
@@ -8,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script id="tailwind-config">
     tailwind.config = {
@@ -67,6 +66,11 @@
     .hide-scrollbar::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Opera */
     }
+
+    /* Perubahan warna ikon play hover */
+    .film-poster-container .hover-overlay .material-symbols-outlined {
+        color: #f59e0b; /* Mengubah warna ikon play */
+    }
   </style>
 </head>
 <body class="font-display bg-background-dark text-[#E0E0E0]">
@@ -75,22 +79,43 @@
 <div class="flex flex-1 justify-center">
 <div class="layout-content-container flex w-full flex-col">
 <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 md:px-10 lg:px-20">
+    
     <div class="flex items-center gap-8">
         <div class="flex items-center gap-3">
-            <img src="logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+            <img src="/logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
         </div>
+    </div>
 
-        <nav class="hidden items-center gap-8 md:flex">
-            <a class="text-[#f59e0b] hover:text-primary text-sm font-medium leading-normal transition-colors" href="home.html">Beranda</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="about.html">Tentang Kami</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="film.html">Katalog Film</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="genre.html">Katalog Genre</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="blog.html">Blog</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="kontak.html">Kontak</a>
+    <div class="flex flex-1 justify-center">
+        <nav class="hidden items-center md:flex md:justify-center">
+            <ul class="flex items-center gap-8">
+                <li><a class="text-[#f59e0b] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a></li>
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a></li>
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a></li>
+                
+                <li class="relative group">
+                    <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors flex items-center gap-1 py-3" href="/genre.html">
+                        Katalog Genre
+                        <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </a>
+                    
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-[100%] z-50 hidden group-hover:block w-40 rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <nav class="flex flex-col space-y-1">
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Drama Islami</a>
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Sejarah</a>
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Biografi</a>
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Keluarga</a>
+                        </nav>
+                    </div>
+                </li>
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a></li>
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a></li>
+            </ul>
         </nav>
     </div>
 
-    <div class="flex flex-1 items-center justify-end gap-4">
+
+    <div class="flex items-center justify-end">
         <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
             <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
                 <div class="text-[#A0A0A0] flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
@@ -99,107 +124,11 @@
                 <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-white/5 focus:border-none h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Cari film..." value=""/>
             </div>
         </label>
-
-        <div class="relative">
-    <button id="profile-button" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/5 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 transition-all duration-200 hover:ring-2 hover:ring-primary">
-        <span class="material-symbols-outlined text-2xl">person</span>
-    </button>
-
-    <div id="profile-dropdown" class="absolute right-0 top-12 z-50 hidden w-64 origin-top-right rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10">
-        
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Akun Saya</div>
-            <a href="account/profile.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">account_circle</span>
-                Lihat Profil
-            </a>
-        </nav>
-
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <a href="/watchlist.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">bookmark</span>
-                Daftar Tonton
-            </a>
-            <a href="/history.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">history</span>
-                Riwayat Tontonan
-            </a>
-        </nav>
-        
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Berlangganan</div>
-            <a href="/subscriptions.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">workspace_premium</span>
-                Paket Berlangganan
-            </a>
-        </nav>
-
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pengaturan</div>
-            <a href="/settings.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">settings</span>
-                Pengaturan Umum
-            </a>
-            <a href="/security.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">shield</span>
-                Keamanan
-            </a>
-        </nav>
-
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pusat Bantuan</div>
-            <a href="/faq.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">help</span>
-                FAQ & Bantuan
-            </a>
-            <a href="/report.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">flag</span>
-                Laporan Masalah
-            </a>
-        </nav>
-
-        <a href="/logout.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold text-red-500 hover:bg-white/10 hover:text-red-400 transition-colors">
-            <span class="material-symbols-outlined text-lg">logout</span>
-            LOGOUT
-        </a>
-
     </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const profileButton = document.getElementById('profile-button');
-        const profileDropdown = document.getElementById('profile-dropdown');
-
-        if (profileButton && profileDropdown) {
-            
-            // Toggle dropdown saat tombol diklik (Ini akan membuka/menutup dropdown)
-            profileButton.addEventListener('click', () => {
-                profileDropdown.classList.toggle('hidden');
-            });
-
-            // Opsional: Jika Anda ingin dropdown HILANG saat user klik DI LUAR dropdown atau tombol, 
-            // biarkan kode di bawah ini. Jika Anda ingin dropdown HANYA hilang saat tombol diklik lagi, 
-            // hapus bagian ini.
-
-            document.addEventListener('click', (event) => {
-                const isClickInside = profileButton.contains(event.target) || profileDropdown.contains(event.target);
-                
-                // Jika klik dilakukan di luar tombol dan dropdown
-                if (!isClickInside) {
-                    profileDropdown.classList.add('hidden');
-                }
-            });
-        }
-    });
-</script>
-
 </header>
 <main class="w-full">
 <section class="w-full">
-<!-- HERO BANNER (LANDSCAPE) -->
 <div class="relative">
-<!-- Link Hero Banner ke halaman Detail Film -->
 <a href="detail-film.html" class="block w-full"> 
 <div class="flex min-h-[70vh] flex-col gap-6 bg-cover bg-center bg-no-repeat items-start justify-end px-4 pb-16 aspect-[16/9] sm:px-6 md:px-10 lg:px-20" data-alt="Poster film Sang Pencerah, menampilkan sosok K.H. Ahmad Dahlan" style='background-image: linear-gradient(to top, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0.7) 30%, rgba(18, 18, 18, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpbylJq73-Ns4aXvUEXUJZs-IblRp1_7zLReSYksqXyKWFaUY8teC7ShmW6TsBUYjJJ7r9BbStdJpXq1XHIQtMScENZnO_g6LQ3xVqMssImTrAV1R4q0DVtSQrvIpSWQbzTGtmg2ZTbjPPriJr-GeJ2r2bQKw-mpt_3RBlupX3sF8dCbihdmUQgkEybeu-_B24x0pXYbGdu88s-VJ5_L08Kub-LbsDzwbCtWLwilqxownKSwbGhRjovyGI2W-mVUjIWvOOg8TnjDST");'>
 <div class="flex max-w-2xl flex-col gap-4 text-left">
@@ -215,7 +144,6 @@
 </div>
 <h2 class="text-[#E0E0E0] text-base font-normal leading-normal line-clamp-3">Kisah nyata perjuangan K.H. Ahmad Dahlan, pendiri Muhammadiyah, dalam menyebarkan ajaran Islam yang modern dan mencerahkan di tengah tantangan sosial dan tradisi pada awal abad ke-20.</h2>
 </div>
-<!-- Button Tonton Sekarang - Link ke Detail Film -->
 <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors mt-2" onclick="window.location.href='detail-film.html'; return false;">
 <span class="truncate">Tonton Sekarang</span>
 </button>
@@ -224,17 +152,14 @@
 </div>
 </section>
 
-<!-- FILM ROW 1: PILIHAN KEMENAG (PORTRAIT) -->
 <section class="py-8 md:py-12">
 <div class="px-4 sm:px-6 md:px-10 lg:px-20">
 <h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-4">Film Pilihan Kemenag</h2>
 <div class="flex overflow-x-auto hide-scrollbar -mx-4 sm:-mx-6 md:-mx-10 lg:-mx-20">
 <div class="flex items-stretch gap-4 px-4 sm:px-6 md:px-10 lg:px-20">
 
-<!-- Movie Item 1 -->
-<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
-<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Ayat-Ayat Cinta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV");'>
-    <!-- HOVER OVERLAY -->
+<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
+<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Ayat-Ayat Cinta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV");'>
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -246,10 +171,8 @@
 </div>
 </a>
 
-<!-- Movie Item 2 -->
-<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
-<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Ketika Cinta Bertasbih" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW");'>
-    <!-- HOVER OVERLAY -->
+<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
+<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Ketika Cinta Bertasbih" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW");'>
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -261,10 +184,8 @@
 </div>
 </a>
 
-<!-- Movie Item 3 -->
-<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
-<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Negeri 5 Menara" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'>
-    <!-- HOVER OVERLAY -->
+<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
+<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Negeri 5 Menara" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'>
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -276,10 +197,8 @@
 </div>
 </a>
 
-<!-- Movie Item 4 -->
-<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
-<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Laskar Pelangi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D");'>
-    <!-- HOVER OVERLAY -->
+<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
+<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Laskar Pelangi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D");'>
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -291,10 +210,8 @@
 </div>
 </a>
 
-<!-- Movie Item 5 -->
-<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
-<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film 99 Cahaya di Langit Eropa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwdgtPJ1jGtDqtljtKx3gaNjeQ_2vJ6IjORCqWX16SgpG5Z5-b3F_neum0wT_RrtSMMls-3KgPpCGswKRtN9Q1HpAwF59vFp6kXIUFBI5fWBFmPxp_9gBSdqH5n8qvvjM4Px-nGBYF5ekyLMk8Ijnh3Esrv1tlPJjJeIoymYT0JGZo6N1I4o95z9EDfECqR_GTjUX_hZLTBJKUefEzsxrXIh3NTb6RuPOaD575NO_UGGcswAmooHUhi_s8BrlrerNaE_s6sfagag9V");'>
-    <!-- HOVER OVERLAY -->
+<a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
+<div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film 99 Cahaya di Langit Eropa" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwdgtPJ1jGtDqtljtKx3gaNjeQ_2vJ6IjORCqWX16SgpG5Z5-b3F_neum0wT_RrtSMMls-3KgPpCGswKRtN9Q1HpAwF59vFp6kXIUFBI5fWBFmPxp_9gBSdqH5n8qvvjM4Px-nGBYF5ekyLMk8Ijnh3Esrv1tlPJjJeIoymYT0JGZo6N1I4o95z9EDfECqR_GTjUX_hZLTBJKUefEzsxrXIh3NTb6RuPOaD575NO_UGGcswAmooHUhi_s8BrlrerNaE_s6sfagag9V");'>
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -310,17 +227,14 @@
 </div>
 </section>
 
-<!-- FILM ROW 2: BARU DIRILIS (LANDSCAPE) -->
 <section class="py-8 md:py-12">
 <div class="px-4 sm:px-6 md:px-10 lg:px-20">
 <h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-4">Baru Dirilis</h2>
 <div class="flex overflow-x-auto hide-scrollbar -mx-4 sm:-mx-6 md:-mx-10 lg:-mx-20">
 <div class="flex items-stretch gap-4 px-4 sm:px-6 md:px-10 lg:px-20">
 
-<!-- Movie Item 1 (Landscape) -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Haji Backpacker" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdWaHIbnd7AollA5UlBGz6H36QjosPZnrk0LKE53uA7GpdXt5ExBFJD7YpMGTmtIknv3v36ptD8ZSLLQOl5nQxi4MBmUNsku1bS1NrR65SrJ6nGY-Z6gH6vCSBL5s6IjHTPxHxkZj0a46ZAEWiPBzf2kHi5F4qKKTwFy3Elr04A8yH0ziFoSurRFQJAEMrIdSfRM6LWQwncFk862KAKTkE9FWLv3yOQgcrbVXKbxznNO76zAIWFslmoijOHF2mVnXr6mL41gYrxIbC");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -332,10 +246,8 @@
 </div>
 </a>
 
-<!-- Movie Item 2 (Landscape) -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Sang Kyai" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_-0osg9-hcxJbdugFpD-7YwSYRJpwTJAxZVQuKKJNDeZPc55EHhH8yxXwkz5l-Mr1lxcgnwFHDjZ3tG7p4Fv8wG_8bX2KzUoEdOWw_IJz28fdOS0uXlWRqBHt1xhmCWr_-AzsX16IYqjMDV-qnD55fu6dK9WQLFMrPFqVFbPG-xjfzYWEJ3GNBevER7vNksyGbWv_7aL0pPlk7igPrjqSPzwWdMzw8IIKRrz5OZcck26RJ24FHW7fKJ7amsz4JCgny_9g86UdqxyP");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -347,10 +259,8 @@
 </div>
 </a>
 
-<!-- Movie Item 3 (Landscape) -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Perempuan Berkalung Sorban" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArdoysNkdE-d9wK4GTIC5RdTaaWde1oshMwa0SrJB7wxKR_qnOQ7LxSvhSJphh_bCiuWjqRua39fbVzZix9Kv3RNEEy2NJHg-EO1lHchQwr5T6h9kuTr8o9lZB6njXUl4kEzuhYKeiBgr9-SalW1odfUHE7LCwdk2iqS0iARALirR8xtNvJrnaEucKWNMPO78MvmAqaZdwKZ_G4gJkiLtiDpEO2QeUrN967IShHUTpxHxkZj0a46ZAEWiPBzf2kHi5F4qKKTwFy3Elr04A8yH0ziFoSurRFQJAEMrIdSfRM6LWQwncFk862KAKTkE9FWLv3yOQgcrbVXKbxznNO76zAIWFslmoijOHF2mVnXr6mL41gYrxIbC");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -362,10 +272,8 @@
 </div>
 </a>
 
-<!-- Movie Item 4 (Landscape) -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-64 md:w-72 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[16/9] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Tausiyah Cinta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbJxy6l5GIBN46FmU6aQmNSa-FnjMlX1Uxw4FH9A58QRgnLxxrvmhIAafeoe06VEaCN4KWtToluM4NWnZmsypSAmgKN8WkGLyrigAI7vsV67qEqP_bb3z0rOPflDvAqVk5NNXKKRW48KeMZgA_pNB4mt5YglJ69QIH7iuTPy0egnqZBQoalqdS-S2Av6xmxuDMGvPKBplsyOb58V6bgqXeqtW51kWRDgBAbR8DzVtJ_sR_lVusxr6LTDIjeoWkRA28xp_yml8J_-rE");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -381,17 +289,14 @@
 </div>
 </section>
 
-<!-- FILM ROW 3: PALING POPULER (PORTRAIT) -->
 <section class="py-8 md:py-12">
 <div class="px-4 sm:px-6 md:px-10 lg:px-20">
 <h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-4">Paling Populer</h2>
 <div class="flex overflow-x-auto hide-scrollbar -mx-4 sm:-mx-6 md:-mx-10 lg:-mx-20">
 <div class="flex items-stretch gap-4 px-4 sm:px-6 md:px-10 lg:px-20">
 
-<!-- Movie Item 1 -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Negeri 5 Menara" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -403,10 +308,8 @@
 </div>
 </a>
 
-<!-- Movie Item 2 -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Laskar Pelangi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -418,10 +321,8 @@
 </div>
 </a>
 
-<!-- Movie Item 3 -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Ayat-Ayat Cinta" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -433,10 +334,8 @@
 </div>
 </a>
 
-<!-- Movie Item 4 -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Sang Kyai" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_-0osg9-hcxJbdugFpD-7YwSYRJpwTJAxZVQuKKJNDeZPc55EHhH8yxXwkz5l-Mr1lxcgnwFHDjZ3tG7p4Fv8wG_8bX2KzUoEdOWw_IJz28fdOS0uXlWRqBHt1xhmCWr_-AzsX16IYqjMDV-qnD55fu6dK9WQLFMrPFqVFbPG-xjfzYWEJ3GNBevER7vNksyGbWv_7aL0pPlk7igPrjqSPzwWdMzw8IIKRrz5OZcck26RJ24FHW7fKJ7amsz4JCgny_9g86UdqxyP");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -448,10 +347,8 @@
 </div>
 </a>
 
-<!-- Movie Item 5 -->
 <a href="detail-film.html" class="flex h-full flex-1 flex-col gap-3 rounded-lg w-40 md:w-48 group cursor-pointer">
 <div class="w-full overflow-hidden rounded-lg bg-center bg-no-repeat aspect-[2/3] bg-cover flex flex-col film-poster-container relative transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Ketika Cinta Bertasbih" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW");'>
-    <!-- HOVER OVERLAY -->
     <div class="hover-overlay">
         <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
     </div>
@@ -467,7 +364,6 @@
 </div>
 </section>
 
-<!-- ARTIKEL SECTION (LINKS TO DETAIL-BLOG.HTML) -->
 <section class="py-8 md:py-12">
 <div class="px-4 sm:px-6 md:px-10 lg:px-20">
 <h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-4">Berita dan Artikel Terbaru</h2>

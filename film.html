@@ -39,6 +39,10 @@
         'GRAD' 0,
         'opsz' 24
     }
+    /* Menambahkan style untuk ikon play di thumbnail */
+    .thumb-hover-icon .material-symbols-outlined {
+        color: #f59e0b;
+    }
   </style>
 </head>
 <body class="font-display bg-background-dark text-[#E0E0E0]">
@@ -47,22 +51,43 @@
 <div class="flex flex-1 justify-center">
 <div class="layout-content-container flex w-full flex-col">
 <header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 md:px-10 lg:px-20">
+    
     <div class="flex items-center gap-8">
         <div class="flex items-center gap-3">
             <img src="/logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
         </div>
+    </div>
 
-        <nav class="hidden items-center gap-8 md:flex">
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a>
-            <a class="text-[#f59e0b] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/genre.html">Katalog Genre</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a>
-            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a>
+    <div class="flex flex-1 justify-center">
+        <nav class="hidden items-center md:flex md:justify-center">
+            <ul class="flex items-center gap-8">
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a></li>
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a></li>
+                <li><a class="text-[#f59e0b] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a></li>
+                
+                <li class="relative group">
+                    <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors flex items-center gap-1 py-3" href="/genre.html">
+                        Katalog Genre
+                        <span class="material-symbols-outlined text-sm transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </a>
+                    
+                    <div class="absolute left-1/2 transform -translate-x-1/2 top-[100%] z-50 hidden group-hover:block w-40 rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <nav class="flex flex-col space-y-1">
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Drama Islami</a>
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Sejarah</a>
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Biografi</a>
+                            <a href="genre.html" class="rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">Keluarga</a>
+                        </nav>
+                    </div>
+                </li>
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a></li>
+                <li><a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a></li>
+            </ul>
         </nav>
     </div>
 
-    <div class="flex flex-1 items-center justify-end gap-4">
+
+    <div class="flex items-center justify-end">
         <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
             <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
                 <div class="text-[#A0A0A0] flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
@@ -71,108 +96,15 @@
                 <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-white/5 focus:border-none h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Cari film..." value=""/>
             </div>
         </label>
-
-        <div class="relative">
-    <button id="profile-button" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/5 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 transition-all duration-200 hover:ring-2 hover:ring-primary">
-        <span class="material-symbols-outlined text-2xl">person</span>
-    </button>
-
-    <div id="profile-dropdown" class="absolute right-0 top-12 z-50 hidden w-64 origin-top-right rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10">
-        
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Akun Saya</div>
-            <a href="account/profile.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">account_circle</span>
-                Lihat Profil
-            </a>
-        </nav>
-
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <a href="/watchlist.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">bookmark</span>
-                Daftar Tonton
-            </a>
-            <a href="/history.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">history</span>
-                Riwayat Tontonan
-            </a>
-        </nav>
-        
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Berlangganan</div>
-            <a href="/subscriptions.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">workspace_premium</span>
-                Paket Berlangganan
-            </a>
-        </nav>
-
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pengaturan</div>
-            <a href="/settings.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">settings</span>
-                Pengaturan Umum
-            </a>
-            <a href="/security.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">shield</span>
-                Keamanan
-            </a>
-        </nav>
-
-        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
-            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pusat Bantuan</div>
-            <a href="/faq.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">help</span>
-                FAQ & Bantuan
-            </a>
-            <a href="/report.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">flag</span>
-                Laporan Masalah
-            </a>
-        </nav>
-
-        <a href="/logout.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold text-red-500 hover:bg-white/10 hover:text-red-400 transition-colors">
-            <span class="material-symbols-outlined text-lg">logout</span>
-            LOGOUT
-        </a>
-
     </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const profileButton = document.getElementById('profile-button');
-        const profileDropdown = document.getElementById('profile-dropdown');
-
-        if (profileButton && profileDropdown) {
-            profileButton.addEventListener('click', () => {
-                profileDropdown.classList.toggle('hidden');
-            });
-            document.addEventListener('click', (event) => {
-                const isClickInside = profileButton.contains(event.target) || profileDropdown.contains(event.target);
-    
-                if (!isClickInside) {
-                    profileDropdown.classList.add('hidden');
-                }
-            });
-        }
-    });
-</script>
-
 </header>
-
 <main class="w-full">
-<section class="w-full px-4 py-12 sm:px-6 md:px-10 lg:px-20 md:py-16">
-<div class="flex flex-col gap-4">
-<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">Katalog Film</h1>
-<p class="text-[#A0A0A0] text-base font-normal leading-normal max-w-3xl">Temukan dan jelajahi koleksi film Islami terbaik dari berbagai genre . Gunakan filter di bawah untuk menyaring pencarian Anda.</p>
-</div>
-</section>
-<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20 pb-12 md:pb-16">
-<div class="flex flex-wrap items-center gap-4 border-y border-white/10 py-6">
+<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20 pb-12 md:pb-5">
+<div class="flex flex-wrap items-center gap-4 border-b border-solid border-white/10 py-4">
 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 flex-1">
 <div class="flex flex-col">
 <select class="form-select w-full rounded-lg border-none bg-white/5 text-sm text-white focus:ring-1 focus:ring-primary">
-<option>Semua Genre</option>
+<option>Genre</option>
 <option>Drama</option>
 <option>Biografi</option>
 <option>Sejarah</option>
@@ -181,7 +113,7 @@
 </div>
 <div class="flex flex-col">
 <select class="form-select w-full rounded-lg border-none bg-white/5 text-sm text-white focus:ring-1 focus:ring-primary">
-<option>26 Nov, 2025 Rilis</option>
+<option>Tahun</option>
 <option>2020-an</option>
 <option>2010-an</option>
 <option>2000-an</option>
@@ -190,19 +122,11 @@
 </div>
 <div class="flex flex-col">
 <select class="form-select w-full rounded-lg border-none bg-white/5 text-sm text-white focus:ring-1 focus:ring-primary">
-<option>Rating</option>
-<option>9+ Bintang</option>
-<option>8+ Bintang</option>
-<option>7+ Bintang</option>
-<option>Semua Umur</option>
-</select>
-</div>
-<div class="flex flex-col">
-<select class="form-select w-full rounded-lg border-none bg-white/5 text-sm text-white focus:ring-1 focus:ring-primary">
-<option>Bahasa</option>
-<option>Indonesia</option>
-<option>Inggris</option>
-<option>Arab</option>
+<option>Kota</option>
+<option>Jakarta</option>
+<option>Bogor</option>
+<option>Tangerang</option>
+<option>Lainnya</option>
 </select>
 </div>
 <button class="col-span-2 sm:col-span-1 lg:col-span-1 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white/5 text-white hover:bg-white/10 transition-colors gap-2 text-sm font-medium leading-normal">
@@ -220,211 +144,175 @@
 </div>
 </div>
 </section>
-<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20 pb-12 md:pb-16">
-<h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-6">Film Unggulan</h2>
-<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-<a class="group relative block w-full overflow-hidden rounded-lg" href="#">
-<div class="w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105 aspect-[16/9]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpbylJq73-Ns4aXvUEXUJZs-IblRp1_7zLReSYksqXyKWFaUY8teC7ShmW6TsBUYjJJ7r9BbStdJpXq1XHIQtMScENZnO_g6LQ3xVqMssImTrAV1R4q0DVtSQrvIpSWQbzTGtmg2ZTbjPPriJr-GeJ2r2bQKw-mpt_3RBlupX3sF8dCbihdmUQgkEybeu-_B24x0pXYbGdu88s-VJ5_L08Kub-LbsDzwbCtWLwilqxownKSwbGhRjovyGI2W-mVUjIWvOOg8TnjDST");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-<div class="absolute inset-x-0 bottom-0 p-4">
-<h3 class="text-lg font-bold text-white">Sang Pencerah</h3>
-<p class="text-sm text-white/80">2010 • Drama, Biografi</p>
-</div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<button class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-background-dark">
-<span class="material-symbols-outlined">play_arrow</span> Tonton Sekarang
-</button>
-</div>
-</a>
-<a class="group relative block w-full overflow-hidden rounded-lg" href="#">
-<div class="w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105 aspect-[16/9]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_-0osg9-hcxJbdugFpD-7YwSYRJpwTJAxZVQuKKJNDeZPc55EHhH8yxXwkz5l-Mr1lxcgnwFHDjZ3tG7p4Fv8wG_8bX2KzUoEdOWw_IJz28fdOS0uXlWRqBHt1xhmCWr_-AzsX16IYqjMDV-qnD55fu6dK9WQLFMrPFqVFbPG-xjfzYWEJ3GNBevER7vNksyGbWv_7aL0pPlk7igPrjqSPzwWdMzw8IIKRrz5OZcck26RJ24FHW7fKJ7amsz4JCgny_9g86UdqxyP");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-<div class="absolute inset-x-0 bottom-0 p-4">
-<h3 class="text-lg font-bold text-white">Sang Kyai</h3>
-<p class="text-sm text-white/80">2013 • Sejarah, Drama</p>
-</div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<button class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-background-dark">
-<span class="material-symbols-outlined">play_arrow</span> Tonton Sekarang
-</button>
-</div>
-</a>
-<a class="group relative block w-full overflow-hidden rounded-lg" href="#">
-<div class="w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105 aspect-[16/9]" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdWaHIbnd7AollA5UlBGz6H36QjosPZnrk0LKE53uA7GpdXt5ExBFJD7YpMGTmtIknv3v36ptD8ZSLLQOl5nQxi4MBmUNsku1bS1NrR65SrJ6nGY-Z6gH6vCSBL5s6IjHTPxHxkZj0a46ZAEWiPBzf2kHi5F4qKKTwFy3Elr04A8yH0ziFoSurRFQJAEMrIdSfRM6LWQwncFk862KAKTkE9FWLv3yOQgcrbVXKbxznNO76zAIWFslmoijOHF2mVnXr6mL41gYrxIbC");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-<div class="absolute inset-x-0 bottom-0 p-4">
-<h3 class="text-lg font-bold text-white">Haji Backpacker</h3>
-<p class="text-sm text-white/80">2014 • Petualangan, Drama</p>
-</div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<button class="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-background-dark">
-<span class="material-symbols-outlined">play_arrow</span> Tonton Sekarang
-</button>
-</div>
-</a>
-</div>
+<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20 pt- md:pb-9">
+    <h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-6">Semua Film</h2>
+    <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpbylJq73-Ns4aXvUEXUJZs-IblRp1_7zLReSYksqXyKWFaUY8teC7ShmW6TsBUYjJJ7r9BbStdJpXq1XHIQtMScENZnO_g6LQ3xVqMssImTrAV1R4q0DVtSQrvIpSWQbzTGtmg2ZTbjPPriJr-GeJ2r2bQKw-mpt_3RBlupX3sF8dCbihdmUQgkEybeu-_B24x0pXYbGdu88s-VJ5_L08Kub-LbsDzwbCtWLwilqxownKSwbGhRjovyGI2W-mVUjIWvOOg8TnjDST");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary thumb-hover-icon">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Sang Pencerah</p>
+                <p class="text-xs font-semibold text-primary">2010 • Drama, Biografi</p>
+            </div>
+        </a>
+        
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_-0osg9-hcxJbdugFpD-7YwSYRJpwTJAxZVQuKKJNDeZPc55EHhH8yxXwkz5l-Mr1lxcgnwFHDjZ3tG7p4Fv8wG_8bX2KzUoEdOWw_IJz28fdOS0uXlWRqBHt1xhmCWr_-AzsX16IYqjMDV-qnD55fu6dK9WQLFMrPFqVFbPG-xjfzYWEJ3GNBevER7vNksyGbWv_7aL0pPlk7igPrjqSPzwWdMzw8IIKRrz5OZcck26RJ24FHW7fKJ7amsz4JCgny_9g86UdqxyP");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary thumb-hover-icon">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Sang Kyai</p>
+                <p class="text-xs font-semibold text-primary">2013 • Sejarah, Drama</p>
+            </div>
+        </a>
+        
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdWaHIbnd7AollA5UlBGz6H36QjosPZnrk0LKE53uA7GpdXt5ExBFJD7YpMGTmtIknv3v36ptD8ZSLLQOl5nQxi4MBmUNsku1bS1NrR65SrJ6nGY-Z6gH6vCSBL5s6IjHTPxHxkZj0a46ZAEWiPBzf2kHi5F4qKKTwFy3Elr04A8yH0ziFoSurRFQJAEMrIdSfRM6LWQwncFk862KAKTkE9FWLv3yOQgcrbVXKbxznNO76zAIWFslmoijOHF2mVnXr6mL41gYrxIbC");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary thumb-hover-icon">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Haji Backpacker</p>
+                <p class="text-xs font-semibold text-primary">2014 • Petualangan, Drama</p>
+            </div>
+        </a>
+
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary thumb-hover-icon">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Ayat-Ayat Cinta</p>
+                <p class="text-xs font-semibold text-primary">2008 • Drama, Roman</p>
+            </div>
+        </a>
+    </div>
 </section>
-<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20 pb-12 md:pb-16">
-<h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-6">Semua Film</h2>
-<div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Ayat-Ayat Cinta</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Ketika Cinta Bertasbih</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Negeri 5 Menara</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Laskar Pelangi</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwdgtPJ1jGtDqtljtKx3gaNjeQ_2vJ6IjORCqWX16SgpG5Z5-b3F_neum0wT_RrtSMMls-3KgPpCGswKRtN9Q1HpAwF59vFp6kXIUFBI5fWBFmPxp_9gBSdqH5n8qvvjM4Px-nGBYF5ekyLMk8Ijnh3Esrv1tlPJjJeIoymYT0JGZo6N1I4o95z9EDfECqR_GTjUX_hZLTBJKUefEzsxrXIh3NTb6RuPOaD575NO_UGGcswAmooHUhi_s8BrlrerNaE_s6sfagag9V");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">99 Cahaya di Langit Eropa</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArdoysNkdE-d9wK4GTIC5RdTaaWde1oshMwa0SrJB7wxKR_qnOQ7LxSvhSJphh_bCiuWjqRua39fbVzZix9Kv3RNEEy2NJHg-EO1lHchQwr5T6h9kuTr8o9lZB6njXUl4kEzuhYKeiBgr9-SalW1odfUHE7LCwdk2iqS0iARALirR8xtNvJrnaEucKWNMPO78MvmAqaZdwKZ_G4gJkiLtiDpEO2QeUrN967IShHGTKpZTYfgWFprSlIva7-EyR9XIUpL2agXdj6m9B");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Perempuan Berkalung Sorban</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbJxy6l5GIBN46FmU6aQmNSa-FnjMlX1Uxw4FH9A58QRgnLxxrvmhIAafeoe06VEaCN4KWtToluM4NWnZmsypSAmgKN8WkGLyrigAI7vsV67qEqP_bb3z0rOPflDvAqVk5NNXKKRW48KeMZgA_pNB4mt5YglJ69QIH7iuTPy0egnqZBQoalqdS-S2Av6xmxuDMGvPKBplsyOb58V6bgqXeqtW51kWRDgBAbR8DzVtJ_sR_lVusxr6LTDIjeoWkRA28xp_yml8J_-rE");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Tausiyah Cinta</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Negeri 5 Menara</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Laskar Pelangi</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Ayat-Ayat Cinta</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_-0osg9-hcxJbdugFpD-7YwSYRJpwTJAxZVQuKKJNDeZPc55EHhH8yxXwkz5l-Mr1lxcgnwFHDjZ3tG7p4Fv8wG_8bX2KzUoEdOWw_IJz28fdOS0uXlWRqBHt1xhmCWr_-AzsX16IYqjMDV-qnD55fu6dK9WQLFMrPFqVFbPG-xjfzYWEJ3GNBevER7vNksyGbWv_7aL0pPlk7igPrjqSPzwWdMzw8IIKRrz5OZcck26RJ24FHW7fKJ7amsz4JCgny_9g86UdqxyP");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Sang Kyai</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-<a class="group flex flex-col gap-2" href="#">
-<div class="relative w-full overflow-hidden rounded-lg aspect-[2/3]">
-<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW");'></div>
-<div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-<span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
-</div>
-</div>
-<div>
-<p class="truncate text-base font-medium text-white">Ketika Cinta Bertasbih</p>
-<p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
-</div>
-</a>
-</div>
-<nav class="mt-12 flex items-center justify-center gap-4">
-<a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-[#A0A0A0] transition-colors hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">chevron_left</span>
-</a>
-<a class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-sm font-bold text-background-dark" href="#">1</a>
-<a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-white transition-colors hover:bg-white/10" href="#">2</a>
-<a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-white transition-colors hover:bg-white/10" href="#">3</a>
-<span class="text-white">...</span>
-<a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-white transition-colors hover:bg-white/10" href="#">8</a>
-<a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-[#A0A0A0] transition-colors hover:bg-white/10" href="#">
-<span class="material-symbols-outlined">chevron_right</span>
-</a>
-</nav>
+
+<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20 pb-12 md:pb-10">
+    <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Ayat-Ayat Cinta</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Ketika Cinta Bertasbih</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Negeri 5 Menara</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Laskar Pelangi</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwdgtPJ1jGtDqtljtKx3gaNjeQ_2vJ6IjORCqWX16SgpG5Z5-b3F_neum0wT_RrtSMMls-3KgPpCGswKRtN9Q1HpAwF59vFp6kXIUFBI5fWBFmPxp_9gBSdqH5n8qvvjM4Px-nGBYF5ekyLMk8Ijnh3Esrv1tlPJjJeIoymYT0JGZo6N1I4o95z9EDfECqR_GTjUX_hZLTBJKUefEzsxrXIh3NTb6RuPOaD575NO_UGGcswAmooHUhi_s8BrlrerNaE_s6sfagag9V");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">99 Cahaya di Langit Eropa</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArdoysNkdE-d9wK4GTIC5RdTaaWde1oshMwa0SrJB7wxKR_qnOQ7LxSvhSJphh_bCiuWjqRua39fbVzZix9Kv3RNEEy2NJHg-EO1lHchQwr5T6h9kuTr8o9lZB6njXUl4kEzuhYKeiBgr9-SalW1odfUHE7LCwdk2iqS0iARALirR8xtNvJrnaEucKWNMPO78MvmAqaZdwKZ_G4gJkiLtiDpEO2QeUrN967IShHGTKpZTYfgWFprSlIva7-EyR9XIUpL2agXdj6m9B");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Perempuan Berkalung Sorban</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbJxy6l5GIBN46FmU6aQmNSa-FnjMlX1Uxw4FH9A58QRgnLxxrvmhIAafeoe06VEaCN4KWtToluM4NWnZmsypSAmgKN8WkGLyrigAI7vsV67qEqP_bb3z0rOPflDvAqVk5NNXKKRW48KeMZgA_pNB4mt5YglJ69QIH7iuTPy0egnqZBQoalqdS-S2Av6xmxuDMGvPKBplsyOb58V6bgqXeqtW51kWRDgBAbR8DzVtJ_sR_lVusxr6LTDIjeoWkRA28xp_yml8J_-rE");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Tausiyah Cinta</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+        <a class="group flex flex-col gap-2" href="#">
+            <div class="relative w-full overflow-hidden rounded-lg aspect-[16/9]">
+                <div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArdoysNkdE-d9wK4GTIC5RdTaaWde1oshMwa0SrJB7wxKR_qnOQ7LxSvhSJphh_bCiuWjqRua39fbVzZix9Kv3RNEEy2NJHg-EO1lHchQwr5T6h9kuTr8o9lZB6njXUl4kEzuhYKeiBgr9-SalW1odfUHE7LCwdk2iqS0iARALirR8xtNvJrnaEucKWNMPO78MvmAqaZdwKZ_G4gJkiLtiDpEO2QeUrN967IShHUTpxHxkZj0a46ZAEWiPBzf2kHi5F4qKKTwFy3Elr04A8yH0ziFoSurRFQJAEMrIdSfRM6LWQwncFk862KAKTkE9FWLv3yOQgcrbVXKbxznNO76zAIWFslmoijOHF2mVnXr6mL41gYrxIbC");'></div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <span class="material-symbols-outlined text-5xl text-primary">play_circle</span>
+                </div>
+            </div>
+            <div>
+                <p class="truncate text-base font-medium text-white">Ayat-Ayat Cinta 2</p>
+                <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+            </div>
+        </a>
+    </div>
+    <nav class="mt-12 flex items-center justify-center gap-4">
+        <a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-[#A0A0A0] transition-colors hover:bg-white/10" href="#">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </a>
+        <a class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-sm font-bold text-background-dark" href="#">1</a>
+        <a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-white transition-colors hover:bg-white/10" href="#">2</a>
+        <a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-white transition-colors hover:bg-white/10" href="#">3</a>
+        <span class="text-white">...</span>
+        <a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-white transition-colors hover:bg-white/10" href="#">8</a>
+        <a class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-sm text-[#A0A0A0] transition-colors hover:bg-white/10" href="#">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </a>
+    </nav>
 </section>
 </main>
 <footer class="mt-16 border-t border-solid border-white/10 bg-black/30">
@@ -450,11 +338,11 @@
 <div>
 <h3 class="text-base font-semibold text-white">Legal</h3>
 <ul class="mt-4 space-y-2">
-<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Kebijakan Privasi</a></li>
-<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Kebijakan Cookie</a></li>
-<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Syarat dan Ketentuan</a></li>
-<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">DMCA Notice</a></li>
-<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">FAQ</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="privacy-policy.html">Kebijakan Privasi</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="cookie.html">Kebijakan Cookie</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="terms.html">Syarat dan Ketentuan</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="dmca-notice.html">DMCA Notice</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="faq.html">FAQ</a></li>
 </ul>
 </div>
 <div class="col-span-2 md:col-span-4 lg:col-span-1 flex items-start lg:justify-end">
