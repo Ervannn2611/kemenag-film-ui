@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kemenag - FAQ </title>
+<link rel="icon" type="png" href="/logo/Group 5.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f59e0b", // A gold/orange color
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            "display": ["Poppins", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-dark text-[#E0E0E0]">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 md:px-10 lg:px-20">
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
+            <img src="/logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+        </div>
+
+        <nav class="hidden items-center gap-8 md:flex">
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/genre.html">Katalog Genre</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a>
+        </nav>
+    </div>
+
+    <div class="flex flex-1 items-center justify-end gap-4">
+        <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <div class="text-[#A0A0A0] flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
+                    <span class="material-symbols-outlined text-xl">search</span>
+                </div>
+                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-white/5 focus:border-none h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Cari film..." value=""/>
+            </div>
+        </label>
+
+        <div class="relative">
+    <button id="profile-button" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/5 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 transition-all duration-200 hover:ring-2 hover:ring-primary">
+        <span class="material-symbols-outlined text-2xl">person</span>
+    </button>
+
+    <div id="profile-dropdown" class="absolute right-0 top-12 z-50 hidden w-64 origin-top-right rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10">
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Akun Saya</div>
+            <a href="account/profile.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">account_circle</span>
+                Lihat Profil
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <a href="/watchlist.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">bookmark</span>
+                Daftar Tonton
+            </a>
+            <a href="/history.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">history</span>
+                Riwayat Tontonan
+            </a>
+        </nav>
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Berlangganan</div>
+            <a href="/subscriptions.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">workspace_premium</span>
+                Paket Berlangganan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pengaturan</div>
+            <a href="/settings.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">settings</span>
+                Pengaturan Umum
+            </a>
+            <a href="/security.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">shield</span>
+                Keamanan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pusat Bantuan</div>
+            <a href="/faq.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">help</span>
+                FAQ & Bantuan
+            </a>
+            <a href="/report.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">flag</span>
+                Laporan Masalah
+            </a>
+        </nav>
+
+        <a href="/logout.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold text-red-500 hover:bg-white/10 hover:text-red-400 transition-colors">
+            <span class="material-symbols-outlined text-lg">logout</span>
+            LOGOUT
+        </a>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const profileButton = document.getElementById('profile-button');
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+        if (profileButton && profileDropdown) {
+            profileButton.addEventListener('click', () => {
+                profileDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', (event) => {
+                const isClickInside = profileButton.contains(event.target) || profileDropdown.contains(event.target);
+    
+                if (!isClickInside) {
+                    profileDropdown.classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
+
+</header>
+<main class="w-full">
+<div class="relative bg-black">
+<div class="absolute inset-0">
+<img alt="Abstract Islamic Background" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTpqopuwRzI1jN6YrhP8y95zl0KUizjQpLcdZaKC2Is2XsXCfE2QZDS4kOp7nSf9xZ1oVxopGfZqjGnUqr8orjXPMgkbjdb9dK5pEZ41yvJ9hKqqRQzMgl4fPfVNyhClDavMLnwxt6lZ11mtdkATe-FNNeyQb2GjyY4tJzv-GwLr0f3KKz7n-KBZQAhydCCVgxNaqg9U4aBjNJ2_GkTbRdqOnUdod1AyhWPqct1mfNrya3tqgnGyEzCpgDXxiBuTeaoznEeycy7go"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-black/80 to-black/60"></div>
+</div>
+<div class="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-24 sm:py-32 text-center text-white">
+<h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">FAQ</h1>
+<div class="mt-6 text-sm text-[#A0A0A0]">
+
+<span class="text-white">FAQ</span>
+</div>
+</div>
+</div>
+<div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+<div class="prose prose-invert max-w-none prose-p:text-[#E0E0E0] prose-headings:text-white prose-strong:text-white prose-ul:list-disc prose-ol:list-decimal prose-a:text-primary hover:prose-a:text-primary/90">
+<p class="lead !text-lg !text-gray-300">Temukan jawaban untuk pertanyaan yang paling sering diajukan mengenai layanan, akun, dan konten di Kemenag Movies.</p>
+
+<section class="mt-12 space-y-8">
+
+<h2 class="!mb-4 !text-3xl !font-bold">Akun & Pendaftaran</h2>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">1.</span> Bagaimana cara mendaftar di Kemenag Movies?</h3>
+    <p>Anda dapat mendaftar dengan mengklik tombol "Daftar" di sudut kanan atas halaman. Masukkan alamat email dan kata sandi Anda, atau gunakan opsi pendaftaran cepat dengan akun Google/media sosial.</p>
+</div>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">2.</span> Apakah Kemenag Movies berbayar?</h3>
+    <p>Platform Kemenag Movies dapat menawarkan sebagian kontennya secara gratis (free-to-watch) dan sebagian lagi melalui model langganan berbayar (premium). Silakan periksa halaman Paket Langganan untuk detail lebih lanjut.</p>
+</div>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">3.</span> Saya lupa kata sandi. Apa yang harus saya lakukan?</h3>
+    <p>Di halaman masuk, klik tautan "Lupa Kata Sandi". Masukkan alamat email yang terdaftar, dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda.</p>
+</div>
+
+<h2 class="!mt-12 !mb-4 !text-3xl !font-bold">Tontonan & Kualitas Video</h2>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">4.</span> Format dan kualitas video apa yang tersedia?</h3>
+    <p>Sebagian besar film tersedia dalam kualitas HD (720p) hingga Full HD (1080p). Kualitas tontonan akan menyesuaikan secara otomatis dengan kecepatan koneksi internet Anda.</p>
+</div>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">5.</span> Mengapa film saya mengalami *buffering*?</h3>
+    <p>Buffering biasanya disebabkan oleh koneksi internet yang lambat atau tidak stabil. Coba hentikan aplikasi lain yang menggunakan bandwidth atau turunkan kualitas video secara manual di pengaturan pemutar.</p>
+</div>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">6.</span> Apakah saya bisa mengunduh film untuk ditonton secara *offline*?</h3>
+    <p>Fitur unduhan *offline* saat ini hanya tersedia pada aplikasi mobile kami (iOS dan Android). Pastikan Anda memiliki paket langganan yang mendukung fitur ini.</p>
+</div>
+
+<h2 class="!mt-12 !mb-4 !text-3xl !font-bold">Konten & Legalitas</h2>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">7.</span> Apa fokus utama film di Kemenag Movies?</h3>
+    <p>Kami fokus menyajikan film-film yang relevan dengan nilai-nilai keagamaan, sejarah Islam, kebudayaan, dan inspirasi spiritual, sejalan dengan visi Kementerian Agama Republik Indonesia.</p>
+</div>
+
+<div class="space-y-4 border-b border-white/10 pb-4">
+    <h3 class="!mb-0 !text-xl !font-semibold"><span class="text-primary">8.</span> Bagaimana jika saya menemukan konten yang melanggar hak cipta?</h3>
+    <p>Kami menghormati hak cipta. Jika Anda menemukan adanya dugaan pelanggaran, silakan segera ajukan pemberitahuan melalui laman <a href="dmca-notice.html">DMCA Notice</a> kami yang tersedia di bagian footer.</p>
+</div>
+
+</section>
+
+<p class="mt-12 text-center text-sm text-[#A0A0A0]">Tidak menemukan jawaban atas pertanyaan Anda? Silakan kunjungi halaman <a class="text-primary hover:text-primary/90 transition-colors" href="kontak.html">Kontak</a> untuk menghubungi tim dukungan kami.</p>
+
+</div>
+</div>
+</main>
+<footer class="mt-16 border-t border-solid border-white/10 bg-black/30">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-12">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+<div class="col-span-2 md:col-span-4 lg:col-span-2">
+<div class="flex items-center gap-3 text-white">
+<div class="text-primary">
+<img src="logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+</div>
+</div>
+<p class="mt-4 text-sm text-[#A0A0A0]">Platform streaming film Islami persembahan Kementerian Agama Republik Indonesia.</p>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Navigasi</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Tentang Kami</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Katalog Film</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Kontak</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Legal</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="privacy-policy.html">Kebijakan Privasi</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="cookie.html">Kebijakan Cookie</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="terms.html">Syarat dan Ketentuan</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="dmca-notice.html">DMCA Notice</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-4 lg:col-span-1 flex items-start lg:justify-end">
+<div class="w-24">
+<img alt="Logo Kemenag" class="w-full" src="logo/Group 5.png" />
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-white/10 pt-8">
+<p class="text-center text-sm text-[#A0A0A0]">© 2024 Kementerian Agama Republik Indonesia. Hak Cipta Dilindungi.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

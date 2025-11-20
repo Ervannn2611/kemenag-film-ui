@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kemenag - Kebijakan Privasi</title>
+<link rel="icon" type="png" href="/logo/Group 5.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f59e0b", // A gold/orange color
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            "display": ["Poppins", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-display bg-background-dark text-[#E0E0E0]">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 md:px-10 lg:px-20">
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
+            <img src="/logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+        </div>
+
+        <nav class="hidden items-center gap-8 md:flex">
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/genre.html">Katalog Genre</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a>
+        </nav>
+    </div>
+
+    <div class="flex flex-1 items-center justify-end gap-4">
+        <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <div class="text-[#A0A0A0] flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
+                    <span class="material-symbols-outlined text-xl">search</span>
+                </div>
+                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-white/5 focus:border-none h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Cari film..." value=""/>
+            </div>
+        </label>
+
+        <div class="relative">
+    <button id="profile-button" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/5 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 transition-all duration-200 hover:ring-2 hover:ring-primary">
+        <span class="material-symbols-outlined text-2xl">person</span>
+    </button>
+
+    <div id="profile-dropdown" class="absolute right-0 top-12 z-50 hidden w-64 origin-top-right rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10">
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Akun Saya</div>
+            <a href="account/profile.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">account_circle</span>
+                Lihat Profil
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <a href="/watchlist.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">bookmark</span>
+                Daftar Tonton
+            </a>
+            <a href="/history.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">history</span>
+                Riwayat Tontonan
+            </a>
+        </nav>
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Berlangganan</div>
+            <a href="/subscriptions.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">workspace_premium</span>
+                Paket Berlangganan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pengaturan</div>
+            <a href="/settings.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">settings</span>
+                Pengaturan Umum
+            </a>
+            <a href="/security.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">shield</span>
+                Keamanan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pusat Bantuan</div>
+            <a href="/faq.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">help</span>
+                FAQ & Bantuan
+            </a>
+            <a href="/report.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">flag</span>
+                Laporan Masalah
+            </a>
+        </nav>
+
+        <a href="/logout.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold text-red-500 hover:bg-white/10 hover:text-red-400 transition-colors">
+            <span class="material-symbols-outlined text-lg">logout</span>
+            LOGOUT
+        </a>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const profileButton = document.getElementById('profile-button');
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+        if (profileButton && profileDropdown) {
+            profileButton.addEventListener('click', () => {
+                profileDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', (event) => {
+                const isClickInside = profileButton.contains(event.target) || profileDropdown.contains(event.target);
+    
+                if (!isClickInside) {
+                    profileDropdown.classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
+
+</header>
+<main class="w-full">
+<div class="relative bg-black">
+<div class="absolute inset-0">
+<img alt="Abstract Islamic Background" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTpqopuwRzI1jN6YrhP8y95zl0KUizjQpLcdZaKC2Is2XsXCfE2QZDS4kOp7nSf9xZ1oVxopGfZqjGnUqr8orjXPMgkbjdb9dK5pEZ41yvJ9hKqqRQzMgl4fPfVNyhClDavMLnwxt6lZ11mtdkATe-FNNeyQb2GjyY4tJzv-GwLr0f3KKz7n-KBZQAhydCCVgxNaqg9U4aBjNJ2_GkTbRdqOnUdod1AyhWPqct1mfNrya3tqgnGyEzCpgDXxiBuTeaoznEeycy7go"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-black/80 to-black/60"></div>
+</div>
+<div class="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-24 sm:py-32 text-center text-white">
+<h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">Kebijakan Privasi</h1>
+<div class="mt-6 text-sm text-[#A0A0A0]">
+<span class="text-white">Kebijakan Privasi</span>
+</div>
+</div>
+</div>
+<div class="mx-auto max-w-4xl px-4 sm:px-6 py-12 md:py-16">
+<div class="prose prose-invert max-w-none prose-p:text-[#E0E0E0] prose-headings:text-white prose-strong:text-white prose-ul:list-disc prose-ol:list-decimal prose-a:text-primary hover:prose-a:text-primary/90">
+<p class="lead !text-lg !text-gray-300">Selamat datang di Kemenag Movies. Kami menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan menjaga informasi Anda saat Anda mengunjungi platform kami. Mohon baca kebijakan privasi ini dengan saksama.</p>
+<section class="mt-12 space-y-4">
+<h2 class="!mb-4 !text-2xl !font-bold"><span class="text-primary">1.</span> Pengantar</h2>
+<p>Kebijakan ini berlaku untuk semua informasi yang dikumpulkan melalui platform kami. Dengan menggunakan layanan kami, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan kebijakan ini. Jika Anda tidak setuju dengan ketentuan kebijakan privasi ini, mohon untuk tidak mengakses platform ini.</p>
+</section>
+<section class="mt-10 space-y-4">
+<h2 class="!mb-4 !text-2xl !font-bold"><span class="text-primary">2.</span> Informasi yang Kami Kumpulkan</h2>
+<p>Kami dapat mengumpulkan informasi tentang Anda dalam berbagai cara. Informasi yang dapat kami kumpulkan di Platform meliputi data pribadi yang Anda berikan secara sukarela (seperti nama dan email saat pendaftaran) dan data turunan yang dikumpulkan secara otomatis (seperti alamat IP dan jenis browser).</p>
+</section>
+<section class="mt-10 space-y-4">
+<h2 class="!mb-4 !text-2xl !font-bold"><span class="text-primary">3.</span> Tujuan Penggunaan Data</h2>
+<p>Memiliki informasi yang akurat tentang Anda memungkinkan kami untuk memberikan Anda pengalaman yang lancar, efisien, dan disesuaikan. Secara khusus, kami dapat menggunakan informasi yang dikumpulkan tentang Anda untuk:</p>
+<ul class="pl-5 space-y-2">
+<li>Membuat dan mengelola akun Anda.</li>
+<li>Memungkinkan komunikasi antar pengguna.</li>
+<li>Memantau dan menganalisis penggunaan untuk meningkatkan pengalaman Anda.</li>
+<li>Memenuhi dan mengelola pembelian dan transaksi lainnya.</li>
+</ul>
+</section>
+<section class="mt-10 space-y-4">
+<h2 class="!mb-4 !text-2xl !font-bold"><span class="text-primary">4.</span> Penyimpanan dan Keamanan Data</h2>
+<p>Kami menggunakan langkah-langkah keamanan administratif, teknis, dan fisik untuk membantu melindungi informasi pribadi Anda. Meskipun kami telah mengambil langkah-langkah yang wajar untuk mengamankan informasi pribadi Anda, perlu diketahui bahwa tidak ada langkah-langkah keamanan yang sempurna atau tidak dapat ditembus.</p>
+</section>
+<section class="mt-10 space-y-4">
+<h2 class="!mb-4 !text-2xl !font-bold"><span class="text-primary">5.</span> Hak-hak Pengguna</h2>
+<p>Anda memiliki hak-hak tertentu terkait dengan data pribadi Anda. Sesuai dengan peraturan yang berlaku, Anda berhak untuk mengakses, memperbaiki, atau meminta penghapusan data pribadi Anda. Untuk menggunakan hak-hak ini, silakan hubungi kami.</p>
+</section>
+<section class="mt-10 space-y-4">
+<h2 class="!mb-4 !text-2xl !font-bold"><span class="text-primary">6.</span> Perubahan Kebijakan</h2>
+<p>Kami berhak untuk membuat perubahan pada Kebijakan Privasi ini kapan saja dan untuk alasan apa pun. Kami akan memberitahu Anda tentang perubahan apa pun dengan memperbarui tanggal "Tanggal Efektif" dari Kebijakan Privasi ini. Anda dianjurkan untuk secara berkala meninjau Kebijakan Privasi ini untuk tetap mendapat informasi tentang pembaruan.</p>
+<p class="mt-6 text-sm text-[#A0A0A0]">Tanggal Efektif: 1 September 2024</p>
+</section>
+</div>
+</div>
+</main>
+<footer class="mt-16 border-t border-solid border-white/10 bg-black/30">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-12">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+<div class="col-span-2 md:col-span-4 lg:col-span-2">
+<div class="flex items-center gap-3 text-white">
+<div class="text-primary">
+<img src="logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+</div>
+</div>
+<p class="mt-4 text-sm text-[#A0A0A0]">Platform streaming film Islami persembahan Kementerian Agama Republik Indonesia.</p>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Navigasi</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Tentang Kami</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Katalog Film</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Kontak</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Legal</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="privacy-policy.html">Kebijakan Privasi</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="cookie.html">Kebijakan Cookie</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="terms.html">Syarat dan Ketentuan</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="dmca-notice.html">DMCA Notice</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-4 lg:col-span-1 flex items-start lg:justify-end">
+<div class="w-24">
+<img alt="Logo Kemenag" class="w-full" src="logo/Group 5.png" />
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-white/10 pt-8">
+<p class="text-center text-sm text-[#A0A0A0]">© 2024 Kementerian Agama Republik Indonesia. Hak Cipta Dilindungi.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

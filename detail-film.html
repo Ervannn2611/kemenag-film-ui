@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> Kemenag - Detail Film </title>
+<link rel="icon" type="png" href="/logo/Group 5.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f59e0b", // A gold/orange color
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            "display": ["Poppins", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    /* Custom scrollbar hide for cleaner slider appearance */
+    .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    /* Custom style for the video player container for non-edge-to-edge look */
+    .video-container-padding {
+        padding-left: 1rem; /* px-4 */
+        padding-right: 1rem; /* px-4 */
+    }
+    @media (min-width: 640px) { /* sm */
+        .video-container-padding {
+            padding-left: 1.5rem; /* sm:px-6 */
+            padding-right: 1.5rem; /* sm:px-6 */
+        }
+    }
+    @media (min-width: 768px) { /* md */
+        .video-container-padding {
+            padding-left: 2.5rem; /* md:px-10 */
+            padding-right: 2.5rem; /* md:px-10 */
+        }
+    }
+    @media (min-width: 1024px) { /* lg */
+        .video-container-padding {
+            padding-left: 5rem; /* lg:px-20 */
+            padding-right: 5rem; /* lg:px-20 */
+        }
+    }
+  </style>
+</head>
+<body class="font-display bg-background-dark text-[#E0E0E0]">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 md:px-10 lg:px-20">
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
+            <img src="/logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+        </div>
+
+        <nav class="hidden items-center gap-8 md:flex">
+            <a class="text-[#f59e0b] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/genre.html">Katalog Genre</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a>
+        </nav>
+    </div>
+
+    <div class="flex flex-1 items-center justify-end gap-4">
+        <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <div class="text-[#A0A0A0] flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
+                    <span class="material-symbols-outlined text-xl">search</span>
+                </div>
+                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-white/5 focus:border-none h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Cari film..." value=""/>
+            </div>
+        </label>
+
+        <div class="relative">
+    <button id="profile-button" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/5 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 transition-all duration-200 hover:ring-2 hover:ring-primary">
+        <span class="material-symbols-outlined text-2xl">person</span>
+    </button>
+
+    <div id="profile-dropdown" class="absolute right-0 top-12 z-50 hidden w-64 origin-top-right rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10">
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Akun Saya</div>
+            <a href="account/profile.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">account_circle</span>
+                Lihat Profil
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <a href="/watchlist.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">bookmark</span>
+                Daftar Tonton
+            </a>
+            <a href="/history.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">history</span>
+                Riwayat Tontonan
+            </a>
+        </nav>
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Berlangganan</div>
+            <a href="/subscriptions.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">workspace_premium</span>
+                Paket Berlangganan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pengaturan</div>
+            <a href="/settings.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">settings</span>
+                Pengaturan Umum
+            </a>
+            <a href="/security.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">shield</span>
+                Keamanan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pusat Bantuan</div>
+            <a href="/faq.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">help</span>
+                FAQ & Bantuan
+            </a>
+            <a href="/report.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">flag</span>
+                Laporan Masalah
+            </a>
+        </nav>
+
+        <a href="/logout.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold text-red-500 hover:bg-white/10 hover:text-red-400 transition-colors">
+            <span class="material-symbols-outlined text-lg">logout</span>
+            LOGOUT
+        </a>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const profileButton = document.getElementById('profile-button');
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+        if (profileButton && profileDropdown) {
+            profileButton.addEventListener('click', () => {
+                profileDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', (event) => {
+                const isClickInside = profileButton.contains(event.target) || profileDropdown.contains(event.target);
+    
+                if (!isClickInside) {
+                    profileDropdown.classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
+
+</header>
+<main class="w-full">
+<section class="w-full py-8">
+<!-- Video Player Section with Custom Spacing (Sang Pencerah) -->
+<div class="video-container-padding mx-auto w-full max-w-7xl">
+<div class="aspect-video w-full overflow-hidden rounded-xl bg-black relative flex items-center justify-center cursor-pointer group">
+    <!-- Image/Poster -->
+    <img alt="Video player placeholder for Sang Pencerah" class="h-full w-full object-cover opacity-70 transition-opacity duration-300 group-hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpbylJq73-Ns4aXvUEXUJZs-IblRp1_7zLReSYksqXyKWFaUY8teC7ShmW6TsBUYjJJ7r9BbStdJpXq1XHIQtMScENZnO_g6LQ3xVqMssImTrAV1R4q0DVtSQrvIpSWQbzTGtmg2ZTbjPPriJr-GeJ2r2bQKw-mpt_3RBlupX3sF8dCbihdmUQgkEybeu-_B24x0pXYbGdu88s-VJ5_L08Kub-LbsDzwbCtWLwilqxownKSwbGhRjovyGI2W-mVUjIWvOOg8TnjDST"/>
+    
+    <!-- Hover Overlay and Content (Single Div) - This is for the main video player (Sang Pencerah) -->
+    <div class="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-colors duration-300 p-8">
+        <!-- Play Icon - Centered -->
+        <div class="absolute inset-0 flex items-center justify-center">
+             <!-- Use text-[10rem] for extra large icon -->
+             <span class="material-symbols-outlined text-white text-[10rem] transition-transform duration-300 group-hover:scale-110 text-primary drop-shadow-lg" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
+        </div>
+        
+        <!-- Text Details - Hidden initially, appears on hover -->
+        <div class="absolute inset-0 p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <!-- Top Left: Title and Creator -->
+            <div class="flex flex-col gap-1.5 self-start">
+                <!-- Title is large and primary/orange -->
+                <h3 class="text-5xl font-extrabold text-primary leading-tight drop-shadow-lg">Sang Pencerah</h3>
+                <!-- Creator is large and white -->
+                <p class="text-2xl font-semibold text-white drop-shadow-lg">Kreator: Lukman Sardi</p> 
+            </div>
+
+            <!-- Bottom Left: Description -->
+            <div class="self-start max-w-3xl">
+                <!-- Description is large and white -->
+                <p class="text-xl text-white/90 line-clamp-2 drop-shadow-lg">Kisah nyata perjuangan K.H. Ahmad Dahlan, pendiri Muhammadiyah, dalam menyebarkan ajaran Islam yang modern dan mencerahkan.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
+<div class="flex flex-col gap-6 lg:col-span-2">
+<div>
+<h1 class="text-white text-4xl font-bold leading-tight tracking-[-0.015em] md:text-5xl">Sang Pencerah</h1>
+<div class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-[#A0A0A0]">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined !text-xl text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-white font-semibold">8.5/10 IMDb</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-medium">2010</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-medium">1j 52m</span>
+</div>
+<div class="flex items-center gap-2 rounded-md border border-white/20 px-2 py-0.5">
+<span class="text-sm font-medium">SU</span>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 gap-2 px-5 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">play_arrow</span>
+<span class="truncate">Tonton Trailer</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 gap-2 px-5 bg-white/10 text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Tambahkan ke Daftar Tonton</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h2 class="text-white text-xl font-semibold">Sinopsis</h2>
+<p class="text-[#A0A0A0] text-base leading-relaxed">Kisah nyata perjuangan K.H. Ahmad Dahlan, pendiri Muhammadiyah, dalam menyebarkan ajaran Islam yang modern dan mencerahkan di tengah tantangan sosial dan tradisi yang kental pada awal abad ke-20 di Yogyakarta. Film ini menggambarkan bagaimana beliau mendirikan sekolah-sekolah modern, memurnikan ajaran Islam, dan menghadapi perlawanan dari berbagai pihak.</p>
+</div>
+</div>
+<div class="flex flex-col gap-6 items-center text-center">
+
+  <div class="w-full">
+    <h3 class="mb-3 text-lg font-semibold text-white">Creator</h3>
+    <div class="flex justify-center">
+      <div class="flex items-start gap-4">
+        <div class="flex flex-col items-center gap-2 text-center">
+          <img alt="Lukman Sardi" class="h-24 w-24 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv0nmp24vNuW1yiBGU9XVzXdVrLbwIzIxvRDWZS5EAKucWZlnXZge6XCZz4Rnhg3T8z_Bmd8UIm66Yjgcpt9fF8-_HVyScdQIMcSKya1VHxraNX1iXQPi8pRsUge01jsx9e47KKhnWU4RxZ3L4CktCffB6wfrd3iGTBAVe33EtLtSCJuSX9pcb5a70MT0sr3nxr4Qeu4CKHelhFk00Xgsw5rairnX0t_FtHGhs4rmEQqE7vdYQCT-mZJcxvSKFqdaG46gMXyDNvNaG"/>
+          <p class="text-sm font-medium text-white">Lukman Sardi</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 md:py-16">
+<div class="px-4 sm:px-6 md:px-10 lg:px-20">
+<h2 class="text-white text-2xl font-bold leading-tight tracking-[-0.015em] mb-4">Film Serupa Mungkin Anda Suka</h2>
+<div class="flex overflow-x-auto hide-scrollbar -mx-4 sm:-mx-6 md:-mx-10 lg:-mx-20">
+<div class="flex items-stretch gap-4 px-4 sm:px-6 md:px-10 lg:px-20">
+<!-- START: THUMBNAIL RECOMENDATION (ICON ONLY HOVER) -->
+<div class="w-40 flex-shrink-0 md:w-48">
+  <div class="relative overflow-hidden rounded-lg group cursor-pointer aspect-[3/4]"> <!-- Adjusted aspect ratio for better poster size -->
+    <img alt="Poster film Sang Kyai" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_-0osg9-hcxJbdugFpD-7YwSYRJpwTJAxZVQuKKJNDeZPc55EHhH8yxXwkz5l-Mr1lxcgnwFHDjZ3tG7p4Fv8wG_8bX2KzUoEdOWw_IJz28fdOS0uXlWRqBHt1xhmCWr_-AzsX16IYqjMDV-qnD55fu6dK9WQLFMrPFqVFbPG-xjfzYWEJ3GNBevER7vNksyGbWv_7aL0pPlk7igPrjqSPzwWdMzw8IIKRrz5OZcck26RJ24FHW7fKJ7amsz4JCgny_9g86UdqxyP"/>
+    <!-- Hover Overlay: Icon Play ONLY -->
+    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
+    </div>
+  </div>
+  <!-- Text Below Thumbnail - Always Visible -->
+  <div class="mt-2">
+      <h3 class="text-base font-bold text-white leading-tight">Sang Kyai</h3>
+      <p class="text-xs text-white/80 line-clamp-2">Kisah perjuangan K.H. Hasyim Asy'ari.</p>
+      <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+  </div>
+</div>
+<!-- END: THUMBNAIL RECOMENDATION (ICON ONLY HOVER) -->
+
+<!-- Repeat for other items -->
+<div class="w-40 flex-shrink-0 md:w-48">
+  <div class="relative overflow-hidden rounded-lg group cursor-pointer aspect-[3/4]">
+    <img alt="Poster film Guru Bangsa: Tjokroaminoto" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXHQp4IEDGhn5nDckfeCJtzZyeJYDvgOvmigJ4Stv3Bkk4OQAodrAfn6-0BQGYbjnE0uZU9CGOOpKwz815K499HjY0nkcUroekLHRNRi6WNCm44e7MRKqvX-iLQvDONLaq0Y5ub7EvzgzNsnB_IA6J2F-6hrMjgIA-C-MvhgAfGQ0L3LikFpgV1R8f5MYf_rZzspwPOrXpEzfrfi6opNWJwn4XS3bEal__f3vM5jfbevxTckNYWSxAvbSH5imeKGbcJVGAAKPgZYEp"/>
+    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
+    </div>
+  </div>
+  <div class="mt-2">
+      <h3 class="text-base font-bold text-white leading-tight">Guru Bangsa</h3>
+      <p class="text-xs text-white/80 line-clamp-2">Perjuangan pahlawan nasional Indonesia.</p>
+      <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+  </div>
+</div>
+
+<div class="w-40 flex-shrink-0 md:w-48">
+  <div class="relative overflow-hidden rounded-lg group cursor-pointer aspect-[3/4]">
+    <img alt="Poster film Soekarno: Indonesia Merdeka" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQXw50wnOaOtXqrt8_6B_uKPIbP_4shDOqt1RzpRIAxfqkKRtiLT7ohdlV660XwsIfJsJ6_kDnGeXC8TFZ8O2hY5BKnXlRm1Sc_2R4pi6uitps8KiQUL55jj1hdnkO_hA1neK11iO2sVm1YiiMXgL4-104GNQ3n-k6kOrgjMqyLNKLidHAW1SBJ-WwDLG__IPDTKzNd1SJgpaUUFOsBgU1BWFUJEvqcukReV1HZWW5IckPpTGYwsD8Aes3T30ntRVt3qXiZ718da9"/>
+    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
+    </div>
+  </div>
+  <div class="mt-2">
+      <h3 class="text-base font-bold text-white leading-tight">Soekarno</h3>
+      <p class="mt-1 text-xs text-white/80 line-clamp-2">Kisah hidup sang proklamator bangsa.</p>
+      <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+  </div>
+</div>
+
+<div class="w-40 flex-shrink-0 md:w-48">
+  <div class="relative overflow-hidden rounded-lg group cursor-pointer aspect-[3/4]">
+    <img alt="Poster film Kartini" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL8-0lw5Vg6YsZTFUOuyyAbAKYJ2hsHUsO_2XSSiLCAN9bIe1utDVzsd7HK1lnMbBZaFKpnn681Xl7HbbkDqlX289BCy6PsVfjnqJfd9MAFKWRi-5biLCFnbDyLvCYbeaZwZQZITxLX3X2zaRf53M39Bqctgjj5KJfu1-WpdzdytOhgr8e7mMYK8AWS7FGSAV9nsdQ_sILQN6Cb3HsCksh3Z-4VSM4r5NgIDgCLfuxEuqHjLZt3Kb0KbtF_YCaTh8qpAbXVcCRqtVV"/>
+    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
+    </div>
+  </div>
+  <div class="mt-2">
+      <h3 class="text-base font-bold text-white leading-tight">Kartini</h3>
+      <p class="mt-1 text-xs text-white/80 line-clamp-2">Perjuangan emansipasi wanita Indonesia.</p>
+      <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+  </div>
+</div>
+
+<div class="w-40 flex-shrink-0 md:w-48">
+  <div class="relative overflow-hidden rounded-lg group cursor-pointer aspect-[3/4]">
+    <img alt="Poster film Habibie &amp; Ainun" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVhn9K7CLM1ucAbX2i9qHxrxxTAKiNlbfmkykphkmEzIxDEQVnkFPAzK2hb-iJrTmndhCXJ7tUBnYNPsdsusu1xdfh_BPs2qyGpqktUiFsDNq8L7XZ3RDL6dbZ01GvPZyLgekZdf57w3qaD1I538Botw7fm4wQiM12hAzqFJYv6GydBl8bUN5e_azWBJxDuPfibbu0h8oNIoydbSHM1dVMpah-C3MdSo_ulz1j_jPu2et2DEVdfkyunJcqDX7Wa-A2vuyx5b991uJ2"/>
+    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <span class="material-symbols-outlined text-white text-6xl text-primary/90 transition-transform duration-300 group-hover:scale-110" style="font-variation-settings: 'FILL' 1, 'wght' 600;">play_circle</span>
+    </div>
+  </div>
+  <div class="mt-2">
+      <h3 class="text-base font-bold text-white leading-tight">Habibie &amp; Ainun</h3>
+      <p class="mt-1 text-xs text-white/80 line-clamp-2">Kisah cinta abadi presiden ketiga RI.</p>
+      <p class="text-xs font-semibold text-primary">26 Nov, 2025</p>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-16 border-t border-solid border-white/10 bg-black/30">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-12">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+<div class="col-span-2 md:col-span-4 lg:col-span-2">
+<div class="flex items-center gap-3 text-white">
+<div class="text-primary">
+<img src="logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+</div>
+</div>
+<p class="mt-4 text-sm text-[#A0A0A0]">Platform streaming film Islami persembahan Kementerian Agama Republik Indonesia.</p>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Navigasi</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="about.html">Tentang Kami</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="film.html">Katalog Film</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="kontak.html">Kontak</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Legal</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/privacy-policy.html">Kebijakan Privasi</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/cookie.html">Kebijakan Cookie</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/terms.html">Syarat dan Ketentuan</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/dmca-notice.html">DMCA Notice</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-4 lg:col-span-1 flex items-start lg:justify-end">
+<div class="w-24">
+<img alt="Logo Kemenag" class="w-full" src="logo/Group 5.png" />
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-white/10 pt-8">
+<p class="text-center text-sm text-[#A0A0A0]">© 2024 Kementerian Agama Republik Indonesia. Hak Cipta Dilindungi.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>

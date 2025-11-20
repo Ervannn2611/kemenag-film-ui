@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kemenag - Katalog Genre</title>
+<link rel="icon" type="png" href="/logo/Group 5.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f59e0b", // A gold/orange color
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            "display": ["Poppins", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="font-display bg-background-dark text-[#E0E0E0]">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 md:px-10 lg:px-20">
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
+            <img src="/logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+        </div>
+
+        <nav class="hidden items-center gap-8 md:flex">
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a>
+            <a class="text-[#f59e0b] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/genre.html">Katalog Genre</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a>
+        </nav>
+    </div>
+
+    <div class="flex flex-1 items-center justify-end gap-4">
+        <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <div class="text-[#A0A0A0] flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
+                    <span class="material-symbols-outlined text-xl">search</span>
+                </div>
+                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-white/5 focus:border-none h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Cari film..." value=""/>
+            </div>
+        </label>
+
+        <div class="relative">
+    <button id="profile-button" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/5 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 transition-all duration-200 hover:ring-2 hover:ring-primary">
+        <span class="material-symbols-outlined text-2xl">person</span>
+    </button>
+
+    <div id="profile-dropdown" class="absolute right-0 top-12 z-50 hidden w-64 origin-top-right rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10">
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Akun Saya</div>
+            <a href="account/profile.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">account_circle</span>
+                Lihat Profil
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <a href="/watchlist.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">bookmark</span>
+                Daftar Tonton
+            </a>
+            <a href="/history.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">history</span>
+                Riwayat Tontonan
+            </a>
+        </nav>
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Berlangganan</div>
+            <a href="/subscriptions.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">workspace_premium</span>
+                Paket Berlangganan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pengaturan</div>
+            <a href="/settings.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">settings</span>
+                Pengaturan Umum
+            </a>
+            <a href="/security.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">shield</span>
+                Keamanan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pusat Bantuan</div>
+            <a href="/faq.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">help</span>
+                FAQ & Bantuan
+            </a>
+            <a href="/report.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">flag</span>
+                Laporan Masalah
+            </a>
+        </nav>
+
+        <a href="/logout.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold text-red-500 hover:bg-white/10 hover:text-red-400 transition-colors">
+            <span class="material-symbols-outlined text-lg">logout</span>
+            LOGOUT
+        </a>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const profileButton = document.getElementById('profile-button');
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+        if (profileButton && profileDropdown) {
+            profileButton.addEventListener('click', () => {
+                profileDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', (event) => {
+                const isClickInside = profileButton.contains(event.target) || profileDropdown.contains(event.target);
+    
+                if (!isClickInside) {
+                    profileDropdown.classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
+
+</header>
+<main class="w-full">
+<section class="px-4 sm:px-6 md:px-10 lg:px-20 py-12 md:py-16">
+<div class="mx-auto max-w-7xl text-center">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-5xl">Jelajahi Berdasarkan Genre</h1>
+<p class="text-[#A0A0A0] mt-3 text-lg">Temukan Film Pilihanmu dari Berbagai Kategori</p>
+</div>
+</section>
+<section class="px-4 sm:px-6 md:px-10 lg:px-20 py-8 md:py-5">
+<div class="mx-auto max-w-7xl">
+  <div class="relative flex min-h-[400px] flex-col items-start justify-end overflow-hidden rounded-xl bg-cover bg-center bg-no-repeat p-8 md:p-12" data-alt="Poster film yang dramatis menggambarkan sebuah adegan historis" style='background-image: linear-gradient(to right, rgba(18, 18, 18, 0.9) 20%, rgba(18, 18, 18, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'>
+  <span class="rounded-full bg-primary/20 px-3 py-1 text-sm font-semibold text-primary">Rekomendasi Genre</span>
+<div class="flex max-w-md flex-col gap-4">
+<h2 class="text-white text-4xl font-bold leading-tight tracking-[-0.015em]">Sejarah Islam</h2>
+<p class="text-[#E0E0E0]">Telusuri kisah-kisah inspiratif para tokoh dan peristiwa penting dalam peradaban Islam yang membentuk dunia.</p>
+<button class="mt-2 flex max-w-max cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 h-12 text-base font-bold leading-normal tracking-[0.015em] text-background-dark transition-colors hover:bg-primary/90">
+<span>Lihat Semua Film</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 sm:px-6 md:px-10 lg:px-20 py-8 md:py-12">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 md:gap-6">
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Drama Religi</h3>
+<p class="mt-1 text-sm font-medium text-white/80">55 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Sejarah</h3>
+<p class="mt-1 text-sm font-medium text-white/80">32 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdWaHIbnd7AollA5UlBGz6H36QjosPZnrk0LKE53uA7GpdXt5ExBFJD7YpMGTmtIknv3v36ptD8ZSLLQOl5nQxi4MBmUNsku1bS1NrR65SrJ6nGY-Z6gH6vCSBL5s6IjHTPxHxkZj0a46ZAEWiPBzf2kHi5F4qKKTwFy3Elr04A8yH0ziFoSurRFQJAEMrIdSfRM6LWQwncFk862KAKTkE9FWLv3yOQgcrbVXKbxznNO76zAIWFslmoijOHF2mVnXr6mL41gYrxIbC"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Dokumenter</h3>
+<p class="mt-1 text-sm font-medium text-white/80">24 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_-0osg9-hcxJbdugFpD-7YwSYRJpwTJAxZVQuKKJNDeZPc55EHhH8yxXwkz5l-Mr1lxcgnwFHDjZ3tG7p4Fv8wG_8bX2KzUoEdOWw_IJz28fdOS0uXlWRqBHt1xhmCWr_-AzsX16IYqjMDV-qnD55fu6dK9WQLFMrPFqVFbPG-xjfzYWEJ3GNBevER7vNksyGbWv_7aL0pPlk7igPrjqSPzwWdMzw8IIKRrz5OZcck26RJ24FHW7fKJ7amsz4JCgny_9g86UdqxyP"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Keluarga</h3>
+<p class="mt-1 text-sm font-medium text-white/80">48 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuArdoysNkdE-d9wK4GTIC5RdTaaWde1oshMwa0SrJB7wxKR_qnOQ7LxSvhSJphh_bCiuWjqRua39fbVzZix9Kv3RNEEy2NJHg-EO1lHchQwr5T6h9kuTr8o9lZB6njXUl4kEzuhYKeiBgr9-SalW1odfUHE7LCwdk2iqS0iARALirR8xtNvJrnaEucKWNMPO78MvmAqaZdwKZ_G4gJkiLtiDpEO2QeUrN967IShHGTKpZTYfgWFprSlIva7-EyR9XIUpL2agXdj6m9B"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Biografi</h3>
+<p class="mt-1 text-sm font-medium text-white/80">18 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbJxy6l5GIBN46FmU6aQmNSa-FnjMlX1Uxw4FH9A58QRgnLxxrvmhIAafeoe06VEaCN4KWtToluM4NWnZmsypSAmgKN8WkGLyrigAI7vsV67qEqP_bb3z0rOPflDvAqVk5NNXKKRW48KeMZgA_pNB4mt5YglJ69QIH7iuTPy0egnqZBQoalqdS-S2Av6xmxuDMGvPKBplsyOb58V6bgqXeqtW51kWRDgBAbR8DzVtJ_sR_lVusxr6LTDIjeoWkRA28xp_yml8J_-rE"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Animasi</h3>
+<p class="mt-1 text-sm font-medium text-white/80">15 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Anak</h3>
+<p class="mt-1 text-sm font-medium text-white/80">29 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwdgtPJ1jGtDqtljtKx3gaNjeQ_2vJ6IjORCqWX16SgpG5Z5-b3F_neum0wT_RrtSMMls-3KgPpCGswKRtN9Q1HpAwF59vFp6kXIUFBI5fWBFmPxp_9gBSdqH5n8qvvjM4Px-nGBYF5ekyLMk8Ijnh3Esrv1tlPJjJeIoymYT0JGZo6N1I4o95z9EDfECqR_GTjUX_hZLTBJKUefEzsxrXIh3NTb6RuPOaD575NO_UGGcswAmooHUhi_s8BrlrerNaE_s6sfagag9V"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Petualangan</h3>
+<p class="mt-1 text-sm font-medium text-white/80">21 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Komedi</h3>
+<p class="mt-1 text-sm font-medium text-white/80">14 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Misteri</h3>
+<p class="mt-1 text-sm font-medium text-white/80">8 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNH6QXpzOQXEu0CqYTgYHqljVPnHaOKRPkxoaok2I9GWwWoErO_BiK-mO2esOdLy99gtTpDEV5cWyk8S2b0gIzcm7ULOAHh5QQOB3FZ2lLTNEBnDuv6qL2hovrW3YzWsBDZEczn7vnETF5Mn9pPjLypS61ILb-GboII5b2Kgc2l28x4Bih_3F00XmdYe2fDLY-EmEO0hC0RtdAF4FKQ4IwpHzc22g06GCh-Uhqlz9cWhqu6PSIyuiOp_YTkWqHW7ZLC9ATpIDtQwiV"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Inspiratif</h3>
+<p class="mt-1 text-sm font-medium text-white/80">41 Film</p>
+</div>
+</a>
+<a class="group relative flex aspect-square flex-col items-center justify-center overflow-hidden rounded-xl p-4 text-center transition-all duration-300 hover:scale-105" href="#">
+<div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-110" style='background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW"); filter: grayscale(50%) brightness(0.8);'></div>
+<div class="relative z-10 flex flex-col items-center">
+<h3 class="text-xl font-bold text-white">Dakwah</h3>
+<p class="mt-1 text-sm font-medium text-white/80">35 Film</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-16 border-t border-solid border-white/10 bg-black/30">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-12">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+<div class="col-span-2 md:col-span-4 lg:col-span-2">
+<div class="flex items-center gap-3 text-white">
+<div class="text-primary">
+<img src="logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+</div>
+</div>
+<p class="mt-4 text-sm text-[#A0A0A0]">Platform streaming film Islami persembahan Kementerian Agama Republik Indonesia.</p>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Navigasi</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Tentang Kami</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Katalog Film</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Kontak</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Legal</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Kebijakan Privasi</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Kebijakan Cookie</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">Syarat dan Ketentuan</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">DMCA Notice</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-4 lg:col-span-1 flex items-start lg:justify-end">
+<div class="w-24">
+<img alt="Logo Kemenag" class="w-full" src="logo/Group 5.png" />
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-white/10 pt-8">
+<p class="text-center text-sm text-[#A0A0A0]">© 2024 Kementerian Agama Republik Indonesia. Hak Cipta Dilindungi.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

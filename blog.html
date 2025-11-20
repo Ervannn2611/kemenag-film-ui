@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kemenag - Blog </title>
+<link rel="icon" type="png" href="/logo/Group 5.png" />
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f59e0b", // A gold/orange color
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            "display": ["Poppins", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+</head>
+<body class="font-display bg-background-dark text-[#E0E0E0]">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 justify-center">
+<div class="layout-content-container flex w-full flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 bg-background-dark/80 px-4 py-3 backdrop-blur-sm sm:px-6 md:px-10 lg:px-20">
+    <div class="flex items-center gap-8">
+        <div class="flex items-center gap-3">
+            <img src="/logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+        </div>
+
+        <nav class="hidden items-center gap-8 md:flex">
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/home.html">Beranda</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/about.html">Tentang Kami</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/film.html">Katalog Film</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/genre.html">Katalog Genre</a>
+            <a class="text-[#f59e0b] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/blog.html">Blog</a>
+            <a class="text-[#A0A0A0] hover:text-primary text-sm font-medium leading-normal transition-colors" href="/kontak.html">Kontak</a>
+        </nav>
+    </div>
+
+    <div class="flex flex-1 items-center justify-end gap-4">
+        <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                <div class="text-[#A0A0A0] flex border-none bg-white/5 items-center justify-center pl-3 rounded-l-lg border-r-0">
+                    <span class="material-symbols-outlined text-xl">search</span>
+                </div>
+                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary border-none bg-white/5 focus:border-none h-full placeholder:text-[#A0A0A0] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Cari film..." value=""/>
+            </div>
+        </label>
+
+        <div class="relative">
+    <button id="profile-button" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-white/5 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 transition-all duration-200 hover:ring-2 hover:ring-primary">
+        <span class="material-symbols-outlined text-2xl">person</span>
+    </button>
+
+    <div id="profile-dropdown" class="absolute right-0 top-12 z-50 hidden w-64 origin-top-right rounded-lg bg-[#1F1F1F] p-2 shadow-2xl ring-1 ring-white/10">
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Akun Saya</div>
+            <a href="account/profile.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">account_circle</span>
+                Lihat Profil
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <a href="/watchlist.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">bookmark</span>
+                Daftar Tonton
+            </a>
+            <a href="/history.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">history</span>
+                Riwayat Tontonan
+            </a>
+        </nav>
+        
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Berlangganan</div>
+            <a href="/subscriptions.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">workspace_premium</span>
+                Paket Berlangganan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pengaturan</div>
+            <a href="/settings.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">settings</span>
+                Pengaturan Umum
+            </a>
+            <a href="/security.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">shield</span>
+                Keamanan
+            </a>
+        </nav>
+
+        <nav class="flex flex-col space-y-1 pb-2 border-b border-white/10 mb-2">
+            <div class="px-3 py-1 text-xs font-semibold uppercase text-primary">Pusat Bantuan</div>
+            <a href="/faq.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">help</span>
+                FAQ & Bantuan
+            </a>
+            <a href="/report.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-[#E0E0E0] hover:bg-white/10 hover:text-primary transition-colors">
+                <span class="material-symbols-outlined text-lg">flag</span>
+                Laporan Masalah
+            </a>
+        </nav>
+
+        <a href="/logout.html" class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-bold text-red-500 hover:bg-white/10 hover:text-red-400 transition-colors">
+            <span class="material-symbols-outlined text-lg">logout</span>
+            LOGOUT
+        </a>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const profileButton = document.getElementById('profile-button');
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+        if (profileButton && profileDropdown) {
+            profileButton.addEventListener('click', () => {
+                profileDropdown.classList.toggle('hidden');
+            });
+            document.addEventListener('click', (event) => {
+                const isClickInside = profileButton.contains(event.target) || profileDropdown.contains(event.target);
+    
+                if (!isClickInside) {
+                    profileDropdown.classList.add('hidden');
+                }
+            });
+        }
+    });
+</script>
+
+</header>
+<main class="w-full">
+<section class="px-4 py-8 sm:px-6 md:px-10 lg:px-20 md:py-12">
+<div class="flex flex-col gap-6 md:gap-6">
+<h1 class="text-white text-3xl font-bold leading-tight tracking-[-0.015em] md:text-4xl">Berita dan Artikel</h1>
+<p>
+Selamat datang di blog Kemenag Movies! Temukan artikel, ulasan film, wawancara, dan tips menonton film Islami. Nikmati konten menarik dan inspiratif seputar dunia perfilman dengan nilai-nilai positif.
+</p>
+</div>
+</section>
+<section class="w-full px-4 sm:px-6 md:px-10 lg:px-20 py-8 md:py-5">
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] mb-6 md:text-2xl">Artikel Unggulan</h2>
+<a class="group grid grid-cols-1 gap-6 overflow-hidden rounded-xl bg-white/5 transition-colors hover:bg-white/10 md:grid-cols-2" href="detail-blog.html">
+<div class="aspect-[16/9] w-full">
+<div class="h-full w-full bg-cover bg-center bg-no-repeat transition-transform duration-300 group-hover:scale-105" data-alt="Sebuah kamera film vintage di atas meja" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAM18a9e9KiHk8dOqxQjbtNqWpvbd1i7-5YOEgSqOTRvfUJqLmfDAEFOHaoFZpSixh9dNRiUct3B6MaauMXj9Gx2_Mrhcofg9blIF4UR71TQM2HU-a-ghcLJWw3jQD6zvvkQ5RjccAy3xBgcPMrOhU7PoaInJG-W4gWa9jG611yjb9dV0B12C1DRwBW9H5N82GyIiIv339OK44-wPJ94FZMk8uQ7Lvwtamn6H-qECrKxQD1xcofBv3fFgkw_TBFyBVGLUUi5lEP1hnG")'></div>
+</div>
+<div class="flex flex-col justify-center p-6 md:p-8">
+<p class="text-sm font-semibold uppercase tracking-wider text-primary">Wawasan</p>
+<h3 class="mt-2 text-2xl font-bold text-white group-hover:underline md:text-3xl">Mengenal Lebih Dekat Sinema Islami di Indonesia</h3>
+<p class="mt-3 text-sm text-[#A0A0A0]">12 Agustus 2024</p>
+<p class="mt-4 text-base leading-relaxed text-[#E0E0E0] line-clamp-3">Menyelami sejarah, perkembangan, dan karakteristik unik sinema Islami di tanah air, serta perannya dalam membentuk wacana budaya dan keagamaan melalui layar perak.</p>
+</div>
+</a>
+</section>
+<section class="w-full px-4 py-8 sm:px-6 md:px-10 lg:px-20 md:py-12">
+<div class="flex flex-col gap-12 lg:flex-row">
+<div class="flex-grow">
+<div class="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+<a class="flex flex-col gap-4 group" href="detail-blog.html">
+<div class="overflow-hidden rounded-lg">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="Interior sebuah bioskop yang kosong dengan kursi merah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtDE5rIG3AcPkjSM6CY75UdSFjaUwRFBn7nvzq6C_FAJ8YlX2JEx8kwnTZ-G958bU-7LksS3IjDTKFEcwQSCii-HVQXrNYLcUIzJes6GLqV0ah3gkiNHzvgRaX_KNJLOYsqx99R_1SafOxzzY10aswZyn2jxc1hUGFW91Y-h-9qFYYn-9W4mc12cZz1xnU60-Gnagp0FrF34WAJWIKJ8Wn00bDpBcoOuq1-78BKdmUcz_8Qyy41YwJhqet7oDGWjVAShmxKP12s3Qp");'></div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-primary text-sm font-semibold">Ulasan</p>
+<h3 class="text-white text-lg font-bold leading-tight group-hover:underline">Ulasan Film 'Sang Pencerah': Cahaya Pembaharuan</h3>
+<p class="text-[#A0A0A0] text-sm leading-relaxed">10 Agustus 2024</p>
+</div>
+</a>
+<a class="flex flex-col gap-4 group" href="detail-blog.html">
+<div class="overflow-hidden rounded-lg">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="Tumpukan gulungan film klasik berwarna perak" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB7qkP_B9EJjg9D1fNwCMUaDByT4fcdW10QxHxXgAaxANn2Jx0BbvTTssUcVgtK2vHeWoHfhndbLH3yyReXrZOkYxMMueyX8w162YBNOluj4Kp2dJ_Js06_CjUgq-3k9Jh_ABA4qLY3ZJTo1daUHLoXrsHbLNAqZdheNAMLNbKUiI6jQntKzL_bIUcrqdnPV64CgFw7xyHieSQMWLvesANTcvnBA0ZFi35JVC4WwTruPQAM6K3Ge2lXk95qZ9s7WXeX-RR4rep2-DJO");'></div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-primary text-sm font-semibold">Berita</p>
+<h3 class="text-white text-lg font-bold leading-tight group-hover:underline">Kemenag Movies Akan Hadirkan Fitur Komunitas</h3>
+<p class="text-[#A0A0A0] text-sm leading-relaxed">8 Agustus 2024</p>
+</div>
+</a>
+<a class="flex flex-col gap-4 group" href="detail-blog.html">
+<div class="overflow-hidden rounded-lg">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="Poster film Negeri 5 Menara" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5xmK4xO_9dQQxvWfWJLNTR7Ldl2ZwFKGssmm3nRqQrhMOXShfQlf6C-BMzVcJQ68VAyAY32OiKJns_oqcAwDHmOazN7fQ-lLm1Uh5KY6VBMuaRGDncmYqBO8ECpCCrYS21Pnfl34ZrXqz3SrRVn-C3zCHSKZ86fC-cdzRRF9IDwV_Dob782t4WSXiCPVfpF7tVdRrVwxdjoGqH98Wmcj8nllta-aIf1jmQACbwb-0dW1oqkDGKYPnRp7k1fpCG8UYdfoEGGnVmOna");'></div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-primary text-sm font-semibold">Tips</p>
+<h3 class="text-white text-lg font-bold leading-tight group-hover:underline">5 Film Inspiratif untuk Tontonan Keluarga</h3>
+<p class="text-[#A0A0A0] text-sm leading-relaxed">5 Agustus 2024</p>
+</div>
+</a>
+<a class="flex flex-col gap-4 group" href="detail-blog.html">
+<div class="overflow-hidden rounded-lg">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="Seorang sutradara melihat monitor di lokasi syuting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwdgtPJ1jGtDqtljtKx3gaNjeQ_2vJ6IjORCqWX16SgpG5Z5-b3F_neum0wT_RrtSMMls-3KgPpCGswKRtN9Q1HpAwF59vFp6kXIUFBI5fWBFmPxp_9gBSdqH5n8qvvjM4Px-nGBYF5ekyLMk8Ijnh3Esrv1tlPJjJeIoymYT0JGZo6N1I4o95z9EDfECqR_GTjUX_hZLTBJKUefEzsxrXIh3NTb6RuPOaD575NO_UGGcswAmooHUhi_s8BrlrerNaE_s6sfagag9V");'></div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-primary text-sm font-semibold">Berita</p>
+<h3 class="text-white text-lg font-bold leading-tight group-hover:underline">Festival Film Islami Kemenag 2024 Dibuka</h3>
+<p class="text-[#A0A0A0] text-sm leading-relaxed">2 Agustus 2024</p>
+</div>
+</a>
+<a class="flex flex-col gap-4 group" href="detail-blog.html">
+<div class="overflow-hidden rounded-lg">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="Aktor sedang berakting di depan kamera film" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHIhMshZDLwxwC4kg2_MX-NVT1WdxYvBX_jqowtiWaeh2X2MFzDOSMi0hlW4mEXf72sMNaM6Ev8iki9j0PaHrGpnkRpxoiCPLrkm8UTsJ22kP8JewXCZDdyYCxSHrIBJRXSdg_YKuRoU-ZnNVaVAC0o_phlt9hf_Kk_a3OcJtOnpMalrsNqJ3vrNE0O_iCWqB46bsxEs1Dc66U8ygcYKxQ8EIhQGw_0nzYNiDXJixp04PV2LfueJb7XFf74RAGoFaI0-t1llqMkD_D");'></div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-primary text-sm font-semibold">Ulasan</p>
+<h3 class="text-white text-lg font-bold leading-tight group-hover:underline">Membedah Makna 'Ayat-Ayat Cinta'</h3>
+<p class="text-[#A0A0A0] text-sm leading-relaxed">30 Juli 2024</p>
+</div>
+</a>
+<a class="flex flex-col gap-4 group" href="detail-blog.html">
+<div class="overflow-hidden rounded-lg">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover transition-transform duration-300 group-hover:scale-105" data-alt="Popcorn dan kacamata 3D di kursi bioskop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCplWKQlFuIn-4Hh7GJFLsen9JZVvo9se3lJPWiv7OIt15LqINNOBthsj5pKIrfDu_c145338Um3Tm7RIN-J02DzOYfcPEsOcUQ17uv-WvyuzW-JHvnOR0Sg0j13M7nYJjwIK-cZ1feh7-EVA6dB0FUGhlXzzIEwNAFybWmZW39R6fYwgg6bNy27Yq-x8FaKzD4Mg-9qL9benh-qVI5JSLY02QQsnYpOeh1rPaKF0_AkUUJu7Ge2FnflY-cNeN-BMZlH_pKi6D6h9UW");'></div>
+</div>
+<div class="flex flex-col gap-1">
+<p class="text-primary text-sm font-semibold">Tips</p>
+<h3 class="text-white text-lg font-bold leading-tight group-hover:underline">Cara Menonton Film Secara Kritis dan Islami</h3>
+<p class="text-[#A0A0A0] text-sm leading-relaxed">28 Juli 2024</p>
+</div>
+</a>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-6 bg-primary/20 text-primary hover:bg-primary/30 text-base font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Halaman Berikutnya</span>
+</button>
+</div>
+</div>
+<aside class="w-full shrink-0 space-y-8 lg:w-64 xl:w-72">
+<div class="rounded-xl bg-white/5 p-6">
+<h3 class="text-lg font-bold text-white">Kategori Populer</h3>
+<ul class="mt-4 space-y-3">
+<li><a class="text-[#A0A0A0] hover:text-primary transition-colors" href="#">Ulasan Film (12)</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary transition-colors" href="#">Berita Industri (8)</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary transition-colors" href="#">Tips & Trik (5)</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary transition-colors" href="#">Wawancara (4)</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary transition-colors" href="#">Analisis (3)</a></li>
+</ul>
+</div>
+<div class="rounded-xl bg-white/5 p-6">
+<h3 class="text-lg font-bold text-white">Artikel Terbaru</h3>
+<ul class="mt-4 space-y-4">
+<li>
+<a class="group" href="detail-blog.html">
+<p class="font-medium text-white group-hover:text-primary group-hover:underline">Mengenal Lebih Dekat Sinema Islami</p>
+<p class="text-sm text-[#A0A0A0]">12 Agustus 2024</p>
+</a>
+</li>
+<li>
+<a class="group" href="detail-blog.html">
+<p class="font-medium text-white group-hover:text-primary group-hover:underline">Ulasan Film 'Sang Pencerah'</p>
+<p class="text-sm text-[#A0A0A0]">10 Agustus 2024</p>
+</a>
+</li>
+<li>
+<a class="group" href="detail-blog.html">
+<p class="font-medium text-white group-hover:text-primary group-hover:underline">Kemenag Movies Akan Hadirkan Fitur Komunitas</p>
+<p class="text-sm text-[#A0A0A0]">8 Agustus 2024</p>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<footer class="mt-16 border-t border-solid border-white/10 bg-black/30">
+<div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-20 py-12">
+<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+<div class="col-span-2 md:col-span-4 lg:col-span-2">
+<div class="flex items-center gap-3 text-white">
+<div class="text-primary">
+<img src="logo/Group 2.png" alt="Logo" class="h-8 w-auto object-contain">
+</div>
+</div>
+<p class="mt-4 text-sm text-[#A0A0A0]">Platform streaming film Islami persembahan Kementerian Agama Republik Indonesia.</p>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Navigasi</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="about.html">Tentang Kami</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="film.html">Katalog Film</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="kontak.html">Kontak</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="blog.html">Blog</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-base font-semibold text-white">Legal</h3>
+<ul class="mt-4 space-y-2">
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/privacy-policy.html">Kebijakan Privasi</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/cookie.html">Kebijakan Cookie</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/terms.html">Syarat dan Ketentuan</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/dmca-notice.html">DMCA Notice</a></li>
+<li><a class="text-[#A0A0A0] hover:text-primary text-sm transition-colors" href="/faq.html">FAQ</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-4 lg:col-span-1 flex items-start lg:justify-end">
+<div class="w-24">
+<img alt="Logo Kemenag" class="w-full" src="logo/Group 5.png" />
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-white/10 pt-8">
+<p class="text-center text-sm text-[#A0A0A0]">© 2024 Kementerian Agama Republik Indonesia. Hak Cipta Dilindungi.</p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
